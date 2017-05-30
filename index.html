@@ -1,0 +1,14 @@
+---
+lang: en
+layout: base
+banner: /images/
+title: Home
+---
+
+<!-- {% include grid_menu.html %} -->
+<!-- {% include redoc.html %} -->
+
+<!-- {{ site.data.api.5_3_3_0 }} -->
+{% for path in site.data.api_5_3_3_0.paths %}
+    <pre>{{ path.path }}</pre>
+{% endfor %}

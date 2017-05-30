@@ -1,0 +1,61 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: X-Cart 5 Site
+email: daemos@x-cart.com
+description: X-Cart is the free shopping cart software & solutions for high‑performing online stores
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://site.x-cart.com" # the base hostname & protocol for your site
+encoding: utf-8
+repository: drdaemos/xc5-restapi
+ga_code: 
+
+# Build settings
+safe: false
+markdown: kramdown
+incremental: false
+lsi: true
+
+kramdown:
+  input: GFM
+
+index_path: "links.xml"
+
+elasticsearch:
+    host: "localhost:9200"
+    js_host: "kbsearch.x-cart.com"
+    js_user: "kbuser"
+    js_pass: "53cr37p4"
+    index: "usermanual"
+    type: "articles"
+    analyzer: "english"
+
+gems:
+  - jekyll-redirect-from
+
+# APIs
+
+swagger:
+  - id: api_5_3_3_0
+    json: 'spec/5.3.3.0.json'
+
+# Languages
+
+lang_default: en
+lang:
+    en: English
+    ru: Russian
+
+# Sort orders
+
+sort_default: order
+
+# Category-wide Page ranking
+
+# category_pr:
+#     changelog: 0.2

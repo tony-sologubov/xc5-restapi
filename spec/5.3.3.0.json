@@ -1,0 +1,332 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "X-Cart REST API",
+        "description": "",
+        "version": "5.3.3.0"
+    },
+    "host": "demostore.x-cart.com",
+    "basePath": "/admin.php?target=RESTAPI&",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json",
+        "application/x-www-form-urlencoded"
+    ],
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "paths": {
+        "_path=category/0": {
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Add new category",
+                "operationId": "createCategory",
+                "parameters": [{
+                    "parameter": "category_body",
+                    "name": "body",
+                    "in": "body",
+                    "description": "Category object that needs to be added",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/XLite\\Model\\Category"
+                    }
+                }],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=category/{id}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Retrieve category by id",
+                "operationId": "readCategory",
+                "parameters": [{
+                    "parameter": "category_id",
+                    "name": "id",
+                    "in": "query",
+                    "description": "Id value of the Category object",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Update category by id",
+                "operationId": "updateCategory",
+                "parameters": [{
+                        "parameter": "category_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Category object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    },
+                    {
+                        "parameter": "category_id",
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id value of the Category object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Delete category by id",
+                "operationId": "deleteCategory",
+                "parameters": [{
+                    "parameter": "category_id",
+                    "name": "id",
+                    "in": "query",
+                    "description": "Id value of the Category object",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=category": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Retrieve categories by conditions",
+                "operationId": "readAllCategory",
+                "parameters": [{
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[parent]",
+                        "name": "_cnd[parent]",
+                        "description": "Filters categories by parent id",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[subTree]",
+                        "name": "_cnd[subTree]",
+                        "description": "Retrieve categories subtree by parent id",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[term]",
+                        "name": "_cnd[term]",
+                        "description": "Search by term",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[lastUsage]",
+                        "name": "_cnd[lastUsage]",
+                        "description": "Filters last used categories",
+                        "type": "boolean"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Model\\Category"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "XLite\\Model\\Category": {
+            "properties": {
+                "coupons": {
+                    "description": "Coupons",
+                    "type": "array"
+                },
+                "featuredProducts": {
+                    "description": "Featured products (relation)",
+                    "type": "array"
+                },
+                "ogMeta": {
+                    "description": "Custom Open graph meta tags",
+                    "type": "string"
+                },
+                "useCustomOG": {
+                    "description": "User Open graph meta tags generator flag",
+                    "type": "boolean"
+                },
+                "productClasses": {
+                    "description": "Category classes",
+                    "type": "array"
+                },
+                "useClasses": {
+                    "description": "Status code",
+                    "type": "string",
+                    "x-length": 1
+                },
+                "category_id": {
+                    "description": "Node unique ID",
+                    "type": "integer"
+                },
+                "lpos": {
+                    "description": "Node left value",
+                    "type": "integer"
+                },
+                "rpos": {
+                    "description": "Node right value",
+                    "type": "integer"
+                },
+                "enabled": {
+                    "description": "Node status",
+                    "type": "boolean"
+                },
+                "show_title": {
+                    "description": "Whether to display the category title, or not",
+                    "type": "boolean"
+                },
+                "depth": {
+                    "description": "Category \"depth\" in the tree",
+                    "type": "integer"
+                },
+                "pos": {
+                    "description": "Category position parameter. Sort inside the parent category",
+                    "type": "integer"
+                },
+                "root_category_look": {
+                    "description": "Whether to display the category title, or not",
+                    "type": "string",
+                    "x-length": 32
+                },
+                "quickFlags": {
+                    "description": "Some cached flags",
+                    "type": "integer"
+                },
+                "memberships": {
+                    "description": "Memberships",
+                    "type": "array"
+                },
+                "image": {
+                    "description": "One-to-one relation with category_images table",
+                    "type": "integer"
+                },
+                "banner": {
+                    "description": "One-to-one relation with category_images table",
+                    "type": "integer"
+                },
+                "categoryProducts": {
+                    "description": "Relation to a CategoryProducts entities",
+                    "type": "array"
+                },
+                "children": {
+                    "description": "Child categories",
+                    "type": "array"
+                },
+                "parent": {
+                    "description": "Parent category",
+                    "type": "integer"
+                },
+                "cleanURLs": {
+                    "description": "Clean URLs",
+                    "type": "array"
+                },
+                "metaDescType": {
+                    "description": "Meta description type",
+                    "type": "string",
+                    "x-length": 1
+                },
+                "xcPendingExport": {
+                    "description": "Flag to exporting entities",
+                    "type": "boolean"
+                },
+                "lastUsage": {
+                    "description": "Last usage timestamp (assign products event)",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "parameters": {},
+    "responses": {},
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "_key",
+            "in": "query"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about X-Cart REST API",
+        "url": "http://devs.x-cart.com/en/basics/rest_api_documentation.html"
+    }
+}

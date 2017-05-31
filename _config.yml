@@ -37,6 +37,7 @@ elasticsearch:
 
 gems:
   - jekyll-redirect-from
+  - jekyll-xcart-plugins
 
 # APIs
 

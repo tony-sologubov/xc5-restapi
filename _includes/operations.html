@@ -9,6 +9,7 @@
         <span class="operation-verb">[{{ verb.verb | upcase }}]</span>&nbsp;{{ verb.summary }}
     </p>
     <div class="operation-parameters">
+        <div class="ui small header">{{ site.data.labels["Parameters"][page.lang] }}</div>
         {% for param in verb.parameters %}
         {% if param.in == 'query' %}
         <div class="operation-param" data-key="{{ param.parameter }}">
@@ -19,6 +20,47 @@
             </div>
         </div>
         {% endif %}
+        {% endfor %}
+    </div>
+    <div class="operation-request-body">
+        <div class="ui small header">{{ site.data.labels["Request body"][page.lang] }}</div>
+        {% for param in verb.parameters %}
+        {% if param.in == 'body' %}
+        <div class="operation-schema-type">{{ param.schema.compact_type | escape }}</div>
+        <div class="operation-schema-fields" data-key="{{ param.parameter }}">
+            {% for prop in param.schema.properties %}
+            <div class="schema-field">
+                <div class="schema-field-name">{{ prop.name }}</div>
+                <div class="schema-field-properties">
+                    <div class="schema-field-type">{{ prop.compact_type}}</div>
+                    <div class="schema-field-description">{{ prop.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="operation-responses">
+        <div class="ui small header">{{ site.data.labels["Responses"][page.lang] }}</div>
+        {% for response in verb.responses %}
+            <div class="operation-response">
+                <div class="ui tiny header">{{response.code}}&nbsp;{{response.description}}</div>
+                <div class="operation-schema-type">{{ response.schema.compact_type | escape }}</div>
+                <div class="operation-schema-fields" data-key="{{ response.parameter }}">
+                    {% for prop in response.schema.properties %}
+                    <div class="schema-field">
+                        <div class="schema-field-name">{{ prop.name }}</div>
+                        <div class="schema-field-properties">
+                            <div class="schema-field-type">{{ prop.compact_type}}</div>
+                            <div class="schema-field-description">{{ prop.description }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {{ response.sample }}
         {% endfor %}
     </div>
 </div>

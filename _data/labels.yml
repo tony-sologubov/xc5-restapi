@@ -50,6 +50,18 @@
     en: 'Get started'
     ru: 'C чего начать?'
 
+'Parameters':
+    en: 'Query parameters'
+    ru: 'Query-параметры'
+
+'Request body':
+    en: 'Request body'
+    ru: 'Тело запроса'
+
+'Responses':
+    en: 'Responses'
+    ru: 'Возможные ответы'
+
 'How to install':
     en: 'How to install'
     ru: 'Как установить?'

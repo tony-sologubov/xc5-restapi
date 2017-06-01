@@ -15,7 +15,8 @@ module SwaggerJekyll
     def to_liquid
       {
         'name' => name,
-        'compact_type' => compact_type
+        'compact_type' => compact_type,
+        'properties' => properties,
       }
     end
 

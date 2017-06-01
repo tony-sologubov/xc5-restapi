@@ -13,6 +13,7 @@ module SwaggerJekyll
         'verb' => @verb,
         'path' => @path,
         'responses' => responses,
+        'parameters' => parameters,
         'sample_response' => sample_response)
     end
 
@@ -31,6 +32,10 @@ module SwaggerJekyll
       @_sample_response
     end
 
+    def parameters
+      parameters_hash.values
+    end
+
     def responses
       responses_hash.values
     end
@@ -45,6 +50,23 @@ module SwaggerJekyll
     end
 
     private
+
+    def parameters_hash
+      if @_parameters_hash.nil?  
+        if @hash.nil? or not @hash.key?('parameters')
+          return Hash.new
+        end
+
+        @_parameters_hash = {}
+
+        @hash['parameters'].each do |hash|
+          name = hash['parameter']
+          @_parameters_hash[name] = Parameter.new(name, hash, @specification)
+        end
+      end
+
+      @_parameters_hash
+    end
 
     def responses_hash
       if @_responses_hash.nil?

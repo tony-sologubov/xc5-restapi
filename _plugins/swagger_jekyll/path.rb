@@ -30,8 +30,8 @@ module SwaggerJekyll
     def verbs_hash
       if @_verbs_hash.nil?
         @_verbs_hash = {}
-        @hash.each do |path, hash|
-          @_verbs_hash[path] = Verb.new(path, hash, @specification)
+        @hash.each do |verb, hash|
+          @_verbs_hash[verb] = Verb.new(verb, @path, hash, @specification)
         end
       end
 

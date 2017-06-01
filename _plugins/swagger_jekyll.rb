@@ -16,7 +16,7 @@ require_relative 'swagger_jekyll/schema/object'
 require_relative 'swagger_jekyll/schema/string'
 
 # taken from 18F/Jekyll_get
-# if defined?(Jekyll)
+if defined?(Jekyll)
   module SwaggerJekyll
     class Generator < Jekyll::Generator
       safe true
@@ -46,4 +46,4 @@ require_relative 'swagger_jekyll/schema/string'
       end
     end
   end
-# end
+end

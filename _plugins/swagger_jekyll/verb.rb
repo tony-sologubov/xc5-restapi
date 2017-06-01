@@ -1,8 +1,9 @@
 module SwaggerJekyll
   class Verb
-    attr_accessor :verb, :responses
-    def initialize(verb, hash, specification)
+    attr_accessor :verb, :path, :responses
+    def initialize(verb, path, hash, specification)
       @verb = verb
+      @path = path
       @hash = hash
       @specification = specification
     end
@@ -10,6 +11,7 @@ module SwaggerJekyll
     def to_liquid
       @hash.dup.merge(
         'verb' => @verb,
+        'path' => @path,
         'responses' => responses,
         'sample_response' => sample_response)
     end

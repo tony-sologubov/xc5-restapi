@@ -1,0 +1,25 @@
+{% for verb in page.api.operations %}
+<div id="{{verb.operationId}}" class="ui vertical basic segment operation-segment">
+    <div class="ui right rail">
+        <div class="ui segment operation-response">
+            {{ verb.verb }}
+        </div>
+    </div>
+    <p class="operation-summary">
+        <span class="operation-verb">[{{ verb.verb | upcase }}]</span>&nbsp;{{ verb.summary }}
+    </p>
+    <div class="operation-parameters">
+        {% for param in verb.parameters %}
+        {% if param.in == 'query' %}
+        <div class="operation-param" data-key="{{ param.parameter }}">
+            <div class="param-name">{{ param.name }}</div>
+            <div class="param-properties">
+                <div class="param-type">{{param.type}}&nbsp;{% if param.required %}<span class="required">Required</span>{% endif %}</div>
+                <div class="param-description">{{ param.description }}</div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}

@@ -4,26 +4,3 @@ layout: reference
 banner: /images/
 title: Home
 ---
-
-<div class="ui vertical basic segment">
-    <div class="ui right rail">
-        <div class="ui segment">
-          {% for model in site.data.api_5_3_3_0.definitions %}
-            <pre>{{ model.name }}</pre>
-
-            {% for prop in model.properties %}
-                <code>{{prop.name}}</code>
-            {% endfor %}
-          {% endfor %}
-        </div>
-    </div>
-
-    {% for path in site.data.api_5_3_3_0.paths %}
-        <pre>{{ path.path }}</pre>
-
-        {% for verb in path.verbs %}
-          <code>{{verb.verb}}</code>
-        {% endfor %}
-    {% endfor %}
-</div>
-

@@ -5,14 +5,12 @@ lang: en
 <div class="ui stackable grid">
 	{% include sidebar.html %}
 
-	<article class="content sixteen wide tablet eight wide computer column">
-    {% include breadcrumbs.html %}
+	<article class="content sixteen wide tablet seven wide computer column">
+        <h1 class="post-title">{{ page.title }} (v{{page.api.version}})</h1>
+      	{% include messages.html %}
 
-    <h1 class="post-title">{{ page.title }}</h1>
-  	{% include messages.html %}
-
-    <div class="post-content">
-      {{ content }}
-    </div>
+        <div class="post-content">
+            {% include operations.html %}
+        </div>
 	</article>
 </div>

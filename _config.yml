@@ -39,10 +39,16 @@ gems:
   - jekyll-redirect-from
   - jekyll-xcart-plugins
 
+navigation_starting_level: 2
+
 # APIs
 
+swagger_pages:
+    default_api: 5_3_3_0
+    path: "/api/v:version/"
+
 swagger:
-  - id: api_5_3_3_0
+  - id: 5_3_3_0
     json: 'spec/5.3.3.0.json'
 
 # Languages

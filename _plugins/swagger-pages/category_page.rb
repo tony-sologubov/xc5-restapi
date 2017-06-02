@@ -1,3 +1,5 @@
+require 'securerandom'
+
 module SwaggerPages
   class CategoryPage < Jekyll::Page
     def initialize(site, base, dir, api_data)
@@ -13,6 +15,7 @@ module SwaggerPages
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'reference.html')
+      self.data['identifier'] = SecureRandom.hex(10)
       self.data['api'] = Hash.new
       self.data['api']['category'] = tag
       self.data['api']['operations'] = verbs

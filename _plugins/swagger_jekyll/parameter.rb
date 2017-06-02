@@ -12,6 +12,10 @@ module SwaggerJekyll
       )
     end
 
+    def in
+      hash['in']
+    end
+
     def compact_type
       parameter_type.compact_type
     end

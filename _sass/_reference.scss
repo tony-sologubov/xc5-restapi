@@ -1,0 +1,53 @@
+.jsonview {
+    font-size: 0.85rem;
+}
+
+article.reference {
+
+}
+
+.ui.divider.operation-divider {
+    width: 100vw;
+    margin: 4rem 0;
+}
+
+.operation-segment {
+
+}
+
+.operation-schema-fields {
+    display: table;
+
+    .schema-field {
+        display: table-row;
+    }
+
+    .schema-field-name {
+        display: table-cell;
+    }
+
+    .schema-field-properties {
+        display: table-cell;
+    }
+}
+
+.operation-parameters {
+    display: table;
+
+    .operation-param {
+        display: table-row;
+        &:after {    
+            content: '';
+            padding-bottom: .1875rem;
+            border-bottom: 1px solid rgba(34,36,38,.15);
+        }
+    }
+
+    .param-name {
+        display: table-cell;
+    }
+
+    .param-properties {
+        display: table-cell;
+    }
+}

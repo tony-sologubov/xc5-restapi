@@ -28,10 +28,6 @@ module SwaggerJekyll
       hash['description']
     end
 
-    def example
-      ''
-    end
-
     private
 
     def properties_hash

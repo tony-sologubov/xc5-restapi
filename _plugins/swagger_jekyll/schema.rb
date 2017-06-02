@@ -32,7 +32,12 @@ module SwaggerJekyll
     end
 
     def example
-      ''
+      obj = properties.reduce(Hash.new) do |example, prop|
+        example[prop.name] = prop.example
+        example
+      end
+
+      return obj.length > 0 ? obj : compact_type
     end
 
     def property(name)

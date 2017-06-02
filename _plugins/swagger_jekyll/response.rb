@@ -22,11 +22,11 @@ module SwaggerJekyll
     end
 
     def example
-      string = 'hey' + response_type.example.to_json + 'awdad'
+      if @_example.nil?
+        @_example = response_type.example.to_json
+      end
 
-      puts string.inspect
-
-      string
+      @_example
     end
   end
 end

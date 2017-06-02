@@ -50,7 +50,11 @@
     en: 'Get started'
     ru: 'C чего начать?'
 
-'Parameters':
+'Path parameters':
+    en: 'Path parameters'
+    ru: 'URL-параметры'
+
+'Query parameters':
     en: 'Query parameters'
     ru: 'Query-параметры'
 

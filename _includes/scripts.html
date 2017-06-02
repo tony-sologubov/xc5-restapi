@@ -3,6 +3,7 @@
 <script type="text/javascript" src="//rebilly.github.io/ReDoc/releases/latest/redoc.min.js"></script>
 <script type='text/javascript' src="{{ '/js/underscore-min.js' | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ '/js/moment.js' | prepend: site.baseurl }}"></script>
+<script type='text/javascript' src="{{ '/js/jquery.jsonview.min.js' | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ '/js/clipboard.js' | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ '/js/elasticsearch.jquery.js' | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ '/js/elasticsearch.wrapper.js' | prepend: site.baseurl | append: '?v=0.2.9' }}"></script>
@@ -25,3 +26,13 @@ $(document).ready(function() {
 </script>
 
 {% endif %}
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('.example-json').each(function() {
+        var jsonText = this.innerHTML.trim();
+        this.innerHTML = '';
+        $(this).JSONView(jsonText, { collapsed: true });
+    });
+});
+</script>

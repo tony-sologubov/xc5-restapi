@@ -14,6 +14,9 @@ module SwaggerJekyll
         'path' => @path,
         'responses' => responses,
         'parameters' => parameters,
+        'has_query_params' => has_query_params?,
+        'has_body_params' => has_body_params?,
+        'has_path_params' => has_path_params?,
         'sample_response' => sample_response)
     end
 
@@ -38,6 +41,18 @@ module SwaggerJekyll
 
     def responses
       responses_hash.values
+    end
+
+    def has_query_params?
+      parameters.any? {|param| param.in == 'query'}
+    end
+
+    def has_body_params?
+      parameters.any? {|param| param.in == 'body'}
+    end
+
+    def has_path_params?
+      parameters.any? {|param| param.in == 'path'}
     end
 
     # FIXME: Move to module mixin

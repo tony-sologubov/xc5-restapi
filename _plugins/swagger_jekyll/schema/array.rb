@@ -4,6 +4,10 @@ module SwaggerJekyll
       "#{element_type.compact_type}[] array"
     end
 
+    def example
+      [Hash.new]
+    end
+
     def element_type
       @_element_type ||= Schema.factory(nil, hash['items'], specification)
     end

@@ -2,7 +2,10 @@ require 'hana'
 
 module SwaggerJekyll
   class Reference
+    class << self; attr_accessor :registry end
     attr_accessor :name
+
+    @registry = Hash.new
 
     def initialize(name, hash, specification)
       @name = name
@@ -49,12 +52,22 @@ module SwaggerJekyll
       dereference.properties
     end
 
+    def type
+      ref.gsub('/definitions/', '')
+    end
+
     def compact_type
-      "<#{ref.gsub('/definitions/', '')}>"
+      "<#{type}>"
     end
 
     def example
-      ''
+      if Reference.registry.include?(type) 
+        Reference.registry[type]
+      else 
+        Reference.registry[type] = true
+        Reference.registry[type] = dereference.example
+        dereference.example
+      end
     end
   end
 end

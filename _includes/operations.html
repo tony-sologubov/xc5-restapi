@@ -1,67 +1,54 @@
 {% for verb in page.api.operations %}
 <div id="{{verb.operationId}}" class="ui vertical basic segment operation-segment">
-    <div class="ui right rail">
-        <div class="ui segment operation-response">
-            {{ verb.verb }}
-        </div>
-    </div>
-    <p class="operation-summary">
-        <span class="operation-verb">[{{ verb.verb | upcase }}]</span>&nbsp;{{ verb.summary }}
+    <p class="operation-summary ui dividing header">
+        <span class="operation-verb {{ verb.verb }} ui horizontal label">{{ verb.verb | upcase }}</span>&nbsp;{{ verb.summary }}
     </p>
-    <div class="operation-parameters">
-        <div class="ui small header">{{ site.data.labels["Parameters"][page.lang] }}</div>
+    {% if verb.has_path_params %}
+    <div class="operation-parameters ui basic segment">
+        <div class="ui small header">{{ site.data.labels["Path parameters"][page.lang] }}</div>
         {% for param in verb.parameters %}
-        {% if param.in == 'query' %}
-        <div class="operation-param" data-key="{{ param.parameter }}">
-            <div class="param-name">{{ param.name }}</div>
-            <div class="param-properties">
-                <div class="param-type">{{param.type}}&nbsp;{% if param.required %}<span class="required">Required</span>{% endif %}</div>
-                <div class="param-description">{{ param.description }}</div>
-            </div>
-        </div>
+        {% if param.in == 'path' %}
+            {% include param.html param=param %}
         {% endif %}
         {% endfor %}
     </div>
-    <div class="operation-request-body">
+    {% endif %}
+    {% if verb.has_query_params %}
+    <div class="operation-parameters ui basic segment">
+        <div class="ui small header">{{ site.data.labels["Query parameters"][page.lang] }}</div>
+        {% for param in verb.parameters %}
+        {% if param.in == 'query' %}
+            {% include param.html param=param %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if verb.has_body_params %}
+    <div class="operation-request-body ui basic segment">
         <div class="ui small header">{{ site.data.labels["Request body"][page.lang] }}</div>
         {% for param in verb.parameters %}
         {% if param.in == 'body' %}
-        <div class="operation-schema-type">{{ param.schema.compact_type | escape }}</div>
-        <div class="operation-schema-fields" data-key="{{ param.parameter }}">
-            {% for prop in param.schema.properties %}
-            <div class="schema-field">
-                <div class="schema-field-name">{{ prop.name }}</div>
-                <div class="schema-field-properties">
-                    <div class="schema-field-type">{{ prop.compact_type}}</div>
-                    <div class="schema-field-description">{{ prop.description }}</div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+            {% include schema.html schema=param.schema key=param.parameter %}
         {% endif %}
         {% endfor %}
     </div>
+    {% endif %}
     <div class="operation-responses">
         <div class="ui small header">{{ site.data.labels["Responses"][page.lang] }}</div>
         {% for response in verb.responses %}
-            <div class="operation-response">
+            <div class="operation-response ui basic segment">
                 <div class="ui tiny header">{{response.code}}&nbsp;{{response.description}}</div>
-                <div class="operation-schema-type">{{ response.schema.compact_type | escape }}</div>
-                <div class="operation-schema-fields" data-key="{{ response.parameter }}">
-                    {% for prop in response.schema.properties %}
-                    <div class="schema-field">
-                        <div class="schema-field-name">{{ prop.name }}</div>
-                        <div class="schema-field-properties">
-                            <div class="schema-field-type">{{ prop.compact_type}}</div>
-                            <div class="schema-field-description">{{ prop.description }}</div>
-                        </div>
+                {% include schema.html schema=response.schema key=response.parameter %}
+            </div>
+            <div class="ui right rail">
+                <div class="ui segment operation-response">
+                    <div class="example-json">
+                        {{ response.example | escape }}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
-
-            {{ response.sample }}
         {% endfor %}
     </div>
 </div>
+<div class="ui divider operation-divider"></div>
 {% endfor %}

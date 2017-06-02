@@ -1,0 +1,973 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "X-Cart REST API",
+        "description": "",
+        "version": "5.3.3.0"
+    },
+    "host": "demostore.x-cart.com",
+    "basePath": "/admin.php?target=RESTAPI&",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json",
+        "application/x-www-form-urlencoded"
+    ],
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "paths": {
+        "_path=category/0": {
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Add new category",
+                "operationId": "createCategory",
+                "parameters": [
+                    {
+                        "parameter": "category_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Category object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=category/{id}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Retrieve category by id",
+                "operationId": "readCategory",
+                "parameters": [
+                    {
+                        "parameter": "category_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Category object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Update category by id",
+                "operationId": "updateCategory",
+                "parameters": [
+                    {
+                        "parameter": "category_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Category object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    },
+                    {
+                        "parameter": "category_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Category object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Delete category by id",
+                "operationId": "deleteCategory",
+                "parameters": [
+                    {
+                        "parameter": "category_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Category object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Category"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=category": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Retrieve categories by conditions",
+                "operationId": "readAllCategory",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[parent]",
+                        "name": "_cnd[parent]",
+                        "description": "Filters categories by parent id",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[subTree]",
+                        "name": "_cnd[subTree]",
+                        "description": "Retrieve categories subtree by parent id",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[term]",
+                        "name": "_cnd[term]",
+                        "description": "Search by term",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[lastUsage]",
+                        "name": "_cnd[lastUsage]",
+                        "description": "Filters last used categories",
+                        "type": "boolean"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Model\\Category"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=product/0": {
+            "post": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Add new product",
+                "operationId": "createProduct",
+                "parameters": [
+                    {
+                        "parameter": "product_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Product object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=product/{id}": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Retrieve product by id",
+                "operationId": "readProduct",
+                "parameters": [
+                    {
+                        "parameter": "product_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Product object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Update product by id",
+                "operationId": "updateProduct",
+                "parameters": [
+                    {
+                        "parameter": "product_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Product object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product"
+                        }
+                    },
+                    {
+                        "parameter": "product_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Product object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Delete product by id",
+                "operationId": "deleteProduct",
+                "parameters": [
+                    {
+                        "parameter": "product_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Product object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=product": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Retrieve product by conditions",
+                "operationId": "readAllProduct",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[sKU]",
+                        "name": "_cnd[sKU]",
+                        "description": "Filters products by sku",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[enabled]",
+                        "name": "_cnd[enabled]",
+                        "description": "Filters products by enabled\\disabled state",
+                        "type": "boolean"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[categoryId]",
+                        "name": "_cnd[categoryId]",
+                        "description": "Filters products by category id",
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[substring]",
+                        "name": "_cnd[substring]",
+                        "description": "Filters products by substring in name and description",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[price]",
+                        "name": "_cnd[price]",
+                        "description": "Filters by min price (first item) and max price (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[productClass]",
+                        "name": "_cnd[productClass]",
+                        "description": "Filters by product class",
+                        "type": "object"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[taxClass]",
+                        "name": "_cnd[taxClass]",
+                        "description": "Filters products by tax class",
+                        "type": "object"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[inventory]",
+                        "name": "_cnd[inventory]",
+                        "description": "Filters products by stock status (inventory)",
+                        "type": "string",
+                        "enum": [
+                            "low",
+                            "out",
+                            "in"
+                        ]
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[excludingProductId]",
+                        "name": "_cnd[excludingProductId]",
+                        "description": "Excludes products with given IDs",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[arrivalDate]",
+                        "name": "_cnd[arrivalDate]",
+                        "description": "Filters products by arrival date (timestamp) arranged in two-value array [start, end]",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[arrivalDateRange]",
+                        "name": "_cnd[arrivalDateRange]",
+                        "description": "Filters products by arrival date in format of d-M-Y ~ d-M-Y",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Model\\Product"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "XLite\\Model\\Category": {
+            "properties": {
+                "coupons": {
+                    "description": "Coupons",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "featuredProducts": {
+                    "description": "Featured products (relation)",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "ogMeta": {
+                    "description": "Custom Open graph meta tags",
+                    "type": "string"
+                },
+                "useCustomOG": {
+                    "description": "User Open graph meta tags generator flag",
+                    "type": "boolean"
+                },
+                "productClasses": {
+                    "description": "Category classes",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "useClasses": {
+                    "description": "Status code",
+                    "type": "string",
+                    "x-length": 1
+                },
+                "category_id": {
+                    "description": "Node unique ID",
+                    "type": "integer"
+                },
+                "lpos": {
+                    "description": "Node left value",
+                    "type": "integer"
+                },
+                "rpos": {
+                    "description": "Node right value",
+                    "type": "integer"
+                },
+                "enabled": {
+                    "description": "Node status",
+                    "type": "boolean"
+                },
+                "show_title": {
+                    "description": "Whether to display the category title, or not",
+                    "type": "boolean"
+                },
+                "depth": {
+                    "description": "Category \"depth\" in the tree",
+                    "type": "integer"
+                },
+                "pos": {
+                    "description": "Category position parameter. Sort inside the parent category",
+                    "type": "integer"
+                },
+                "root_category_look": {
+                    "description": "Whether to display the category title, or not",
+                    "type": "string",
+                    "x-length": 32
+                },
+                "quickFlags": {
+                    "description": "Some cached flags",
+                    "type": "integer"
+                },
+                "memberships": {
+                    "description": "Memberships",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "image": {
+                    "description": "One-to-one relation with category_images table",
+                    "type": "integer"
+                },
+                "banner": {
+                    "description": "One-to-one relation with category_images table",
+                    "type": "integer"
+                },
+                "categoryProducts": {
+                    "description": "Relation to a CategoryProducts entities",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "children": {
+                    "description": "Child categories",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/XLite\\Model\\Category"
+                    }
+                },
+                "parent": {
+                    "description": "Parent category",
+                    "$ref": "#/definitions/XLite\\Model\\Category"
+                },
+                "cleanURLs": {
+                    "description": "Clean URLs",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "metaDescType": {
+                    "description": "Meta description type",
+                    "type": "string",
+                    "x-length": 1
+                },
+                "xcPendingExport": {
+                    "description": "Flag to exporting entities",
+                    "type": "boolean"
+                },
+                "lastUsage": {
+                    "description": "Last usage timestamp (assign products event)",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "XLite\\Model\\Product": {
+            "properties": {
+                "featuredProducts": {
+                    "description": "Featured products (relation)",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "attachments": {
+                    "description": "Product attachments",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "ogMeta": {
+                    "description": "Custom Open graph meta tags",
+                    "type": "string"
+                },
+                "useCustomOG": {
+                    "description": "User Open graph meta tags generator flag",
+                    "type": "boolean"
+                },
+                "marketPrice": {
+                    "description": "Product market price",
+                    "type": "string"
+                },
+                "pinCodesEnabled": {
+                    "description": "Whether pin codes are enabled for this product",
+                    "type": "boolean"
+                },
+                "autoPinCodes": {
+                    "description": "Whether to create pin codes automatically",
+                    "type": "boolean"
+                },
+                "pinCodes": {
+                    "description": "Pin codes (relation)",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "views_stats": {
+                    "description": "Relation to product views statistics",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "purchase_stats": {
+                    "description": "Relation to product purchase statistics",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "participateSale": {
+                    "description": "Flag, if the product participates in the sale",
+                    "type": "boolean"
+                },
+                "discountType": {
+                    "description": "self::SALE_DISCOUNT_TYPE_PRICE   if \"sale value\" is considered as \"Sale price\",\nself::SALE_DISCOUNT_TYPE_PERCENT if \"sale value\" is considered as \"Percent Off\".",
+                    "type": "string",
+                    "x-length": 32
+                },
+                "salePriceValue": {
+                    "description": "\"Sale value\"",
+                    "type": "string"
+                },
+                "xcPendingBulkEdit": {
+                    "description": "Flag to exporting entities (no need setters and getters)",
+                    "type": "boolean"
+                },
+                "tabs": {
+                    "description": "Order tabs",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "isCustomerAttachmentsAvailable": {
+                    "description": "Product is available for customer attachments",
+                    "type": "boolean"
+                },
+                "isCustomerAttachmentsRequired": {
+                    "description": "Attachment is required for add to cart",
+                    "type": "boolean"
+                },
+                "facebookMarketingEnabled": {
+                    "description": "Product is available for Facebook Marketing feed",
+                    "type": "boolean"
+                },
+                "freeShip": {
+                    "description": "Is free shipping available for the product",
+                    "type": "boolean"
+                },
+                "freightFixedFee": {
+                    "description": "Shipping freight fixed fee",
+                    "type": "string"
+                },
+                "useAsSegmentCondition": {
+                    "description": "Use product in segment conditions",
+                    "type": "boolean"
+                },
+                "exported_pb": {
+                    "description": "True if product was exported to PB and didn't change after",
+                    "type": "boolean"
+                },
+                "tags": {
+                    "description": "Tags",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "variants": {
+                    "description": "Product variants",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "variantsAttributes": {
+                    "description": "Product variants attributes",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "wholesalePrices": {
+                    "description": "Relation to a product entity",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "reviews": {
+                    "description": "Product reviews",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "upsellingProducts": {
+                    "description": "Links to related products (relation [this product] -> [related product])",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "upsellingParentProducts": {
+                    "description": "Back links from related products (back relation [related product] -> [this product])",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "product_id": {
+                    "description": "Product unique ID",
+                    "type": "integer"
+                },
+                "price": {
+                    "description": "Product price",
+                    "type": "string"
+                },
+                "sku": {
+                    "description": "Product SKU",
+                    "type": "string",
+                    "x-length": 32
+                },
+                "enabled": {
+                    "description": "Is product available or not",
+                    "type": "boolean"
+                },
+                "weight": {
+                    "description": "Product weight",
+                    "type": "string"
+                },
+                "useSeparateBox": {
+                    "description": "Is product shipped in separate box",
+                    "type": "boolean"
+                },
+                "boxWidth": {
+                    "description": "Product box width",
+                    "type": "string"
+                },
+                "boxLength": {
+                    "description": "Product box length",
+                    "type": "string"
+                },
+                "boxHeight": {
+                    "description": "Product box height",
+                    "type": "string"
+                },
+                "itemsPerBox": {
+                    "description": "How many product items can be placed in a box",
+                    "type": "integer"
+                },
+                "free_shipping": {
+                    "description": "Flag: false - product is shippable, true - product is not shippable",
+                    "type": "boolean"
+                },
+                "taxable": {
+                    "description": "If false then the product is free from any taxes",
+                    "type": "boolean"
+                },
+                "javascript": {
+                    "description": "Custom javascript code",
+                    "type": "string"
+                },
+                "arrivalDate": {
+                    "description": "Arrival date (UNIX timestamp)",
+                    "type": "integer"
+                },
+                "date": {
+                    "description": "Creation date (UNIX timestamp)",
+                    "type": "integer"
+                },
+                "updateDate": {
+                    "description": "Update date (UNIX timestamp)",
+                    "type": "integer"
+                },
+                "needProcess": {
+                    "description": "Is product need process or not",
+                    "type": "boolean"
+                },
+                "categoryProducts": {
+                    "description": "Relation to a CategoryProducts entities",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "order_items": {
+                    "description": "Product order items",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "images": {
+                    "description": "Product images",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "inventoryEnabled": {
+                    "description": "Is inventory tracking enabled or not",
+                    "type": "boolean"
+                },
+                "amount": {
+                    "description": "Amount",
+                    "type": "integer"
+                },
+                "lowLimitEnabledCustomer": {
+                    "description": "Is low limit notification enabled for customer or not",
+                    "type": "boolean"
+                },
+                "lowLimitEnabled": {
+                    "description": "Is low limit notification enabled for admin or not",
+                    "type": "boolean"
+                },
+                "lowLimitAmount": {
+                    "description": "Low limit amount",
+                    "type": "integer"
+                },
+                "productClass": {
+                    "description": "Product class (relation)",
+                    "type": "integer"
+                },
+                "taxClass": {
+                    "description": "Tax class (relation)",
+                    "type": "integer"
+                },
+                "attributes": {
+                    "description": "Attributes",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "attributeValueC": {
+                    "description": "Attribute value (checkbox)",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "attributeValueT": {
+                    "description": "Attribute value (text)",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "attributeValueS": {
+                    "description": "Attribute value (select)",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "attrSepTab": {
+                    "description": "Show product attributes in a separate tab",
+                    "type": "boolean"
+                },
+                "quickData": {
+                    "description": "Quick data",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "memberships": {
+                    "description": "Memberships",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "cleanURLs": {
+                    "description": "Clean URLs",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "metaDescType": {
+                    "description": "Meta description type",
+                    "type": "string",
+                    "x-length": 1
+                },
+                "sales": {
+                    "description": "Sales",
+                    "type": "integer"
+                },
+                "xcPendingExport": {
+                    "description": "Flag to exporting entities",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "parameters": {},
+    "responses": {},
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "_key",
+            "in": "query"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about X-Cart REST API",
+        "url": "http://devs.x-cart.com/en/basics/rest_api_documentation.html"
+    }
+}

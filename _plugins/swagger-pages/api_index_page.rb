@@ -22,6 +22,10 @@ module SwaggerPages
       self.data['specfile'] = specfile
 
       self.data['title'] = "API Reference v#{spec.info.version}"
+
+      if spec.info.version == @site.config['swagger_pages']['latest_api'] then 
+        self.data['categories'] = ['home']
+      end
     end
   end
 end

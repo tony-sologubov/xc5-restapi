@@ -1,18 +1,16 @@
-<div class="ui vertical navigation segment">
-  <div class="ui stackable grid container">
+<div class="ui basic vertical segment index-navigation">
+  <div class="ui stackable grid">
     {% assign home_pages = site.pages | sort: 'order' %}
     {% for item in home_pages %}
       {% if item.title and item.categories contains 'home' and item.lang == page.lang %}
           <div class="sixteen wide mobile eight wide tablet third wide computer column">
-              <div class="navigation-item">
+              <div class="navigation-item ui segment">
                 <a href="{{ item.url | prepend: site.baseurl }}">
-                  <h2 class="ui header">
-                    <i class="{{ item.icon }} icon"></i>
+                  <h4 class="ui header">
                     <div class="content">
                       {{ item.title }}
                     </div>
-                  </h2>
-                  <p>{{ item.description }}</p>
+                  </h4>
                 </a>
             </div>
           </div>

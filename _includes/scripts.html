@@ -33,6 +33,10 @@ $(document).ready(function() {
         var jsonText = this.innerHTML.trim();
         this.innerHTML = '';
         $(this).JSONView(jsonText, { collapsed: true });
+        $(this).addClass('initialized');
+    });
+
+    $('.response-accordion').accordion({
     });
 });
 </script>

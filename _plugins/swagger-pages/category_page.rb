@@ -4,9 +4,11 @@ module SwaggerPages
   class CategoryPage < Jekyll::Page
     def initialize(site, base, dir, api_data)
       tag = api_data['tag']
-      verbs = api_data['verbs']
+      verbs = api_data['verbs'].reverse
       spec = api_data['specification']
       filename = get_page_friendly_filename(tag)
+
+      description = spec.tag(tag) ? spec.tag(tag).description : ''
 
       @site = site
       @base = base
@@ -20,6 +22,7 @@ module SwaggerPages
       self.data['api']['category'] = tag
       self.data['api']['operations'] = verbs
       self.data['api']['version'] = spec.info.version
+      self.data['api']['description'] = description
       self.data['hrefs'] = verbs.map do |verb|
         {
           'title' => "[#{verb.verb}] #{verb.summary}",

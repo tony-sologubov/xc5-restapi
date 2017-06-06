@@ -20,16 +20,19 @@ if defined?(Jekyll)
         specs.each do |d|
           data_key = d['id'] || 'swagger'
           specification = site.data[data_key]
-          parse_spec (specification)
+          file = d['json']
+          parse_spec(specification, file)
         end
       end
 
-      def parse_spec(specification)
+      def parse_spec(specification, file)
         tags = get_tags(specification)
 
         tags.each do |tag, verbs|
           @site.pages << generate_page(tag, verbs, specification)
         end
+
+        @site.pages << generate_api_index(tags, specification, file)
       end
 
       def get_tags(specification)
@@ -52,6 +55,16 @@ if defined?(Jekyll)
         end
       end
 
+      def generate_api_index(tags, specification, file)
+        dir = generator_path(specification.info.version)
+        data = {
+          'tags' => tags,
+          'specification' => specification,
+          'specification_file' => file
+        }
+        ApiIndexPage.new(@site, @site.source, dir, data)
+      end
+
       def generate_page(tag, verbs, specification)
         dir = generator_path(specification.info.version)
         data = {
@@ -67,11 +80,7 @@ if defined?(Jekyll)
       # num_page - the pagination page number
       #
       # Returns the pagination path as a string
-      def generator_path(version)        
-        if (version.nil?)
-          version = @config['default_api']
-        end
-
+      def generator_path(version) 
         format = @config['path']
         if format.include?(":version")
           format = format.sub(':version', version)

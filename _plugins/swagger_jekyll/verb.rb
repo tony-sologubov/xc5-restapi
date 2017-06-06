@@ -12,12 +12,17 @@ module SwaggerJekyll
       @hash.dup.merge(
         'verb' => @verb,
         'path' => @path,
+        'full_path' => full_path,
         'responses' => responses,
         'parameters' => parameters,
         'has_query_params' => has_query_params?,
         'has_body_params' => has_body_params?,
         'has_path_params' => has_path_params?,
         'sample_response' => sample_response)
+    end
+
+    def full_path
+      @specification.host + @specification.base_path + @path
     end
 
     def sample_response?

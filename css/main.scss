@@ -5,9 +5,11 @@
 // Our variables
 $base-dir: '';
 $base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+$mono-font-family: monospace;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
+$tiny-font-size:   $base-font-size * 0.75;
 $base-line-height: 1.6;
 
 $spacing-unit:     40px;

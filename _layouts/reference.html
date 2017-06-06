@@ -6,10 +6,16 @@ lang: en
 	{% include sidebar.html %}
 
 	<article class="reference content sixteen wide tablet seven wide computer column">
-        <h1 class="post-title">{{ page.title }} (v{{page.api.version}})</h1>
+        {% include breadcrumbs.html %}
+        <h1 class="post-title">{{ page.title }}</h1>
       	{% include messages.html %}
 
-        <div class="post-content">
+        <div class="post-content">        
+            {% if page.api.description %}
+            <div class="operation-description">
+                {{ page.api.description }}
+            </div>
+            {% endif %}
             {% include operations.html %}
         </div>
 	</article>

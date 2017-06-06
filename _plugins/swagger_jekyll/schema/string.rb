@@ -23,7 +23,7 @@ module SwaggerJekyll
       when 'markdown'
         '"A **markdown** string"'
       else
-        ''
+        'sample'
       end
     end
   end

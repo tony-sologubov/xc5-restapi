@@ -16,7 +16,7 @@ module SwaggerJekyll
     end
 
     def verbs
-      verbs_hash.values
+      verbs_hash.values.reverse
     end
 
     def verb(name)

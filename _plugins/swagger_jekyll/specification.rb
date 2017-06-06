@@ -17,9 +17,13 @@ module SwaggerJekyll
     def to_liquid
       {
         'base_path' => base_path,
+        'host' => host,
         'swagger_version' => swagger_version,
+        'consumes' => consumes,
+        'produces' => produces,
         'paths' => paths,
         'definitions' => definitions,
+        'tags' => tags,
         'info' => info
       }
     end
@@ -28,8 +32,20 @@ module SwaggerJekyll
       @json['swagger']
     end
 
+    def host
+      @json['host']
+    end
+
     def base_path
       @json['basePath']
+    end
+
+    def consumes
+      @json['consumes']
+    end
+
+    def produces
+      @json['produces']
     end
 
     def security
@@ -54,6 +70,14 @@ module SwaggerJekyll
 
     def definitions
       definitions_hash.values
+    end
+
+    def tag(name)
+      tags_hash[name]
+    end
+
+    def tags
+      tags_hash.values
     end
 
     def inspect
@@ -83,6 +107,19 @@ module SwaggerJekyll
       end
 
       @_definitions_hash
+    end
+
+    def tags_hash
+      if @_tags_hash.nil?
+        @_tags_hash = {}
+
+        @json['tags'].each do |hash|
+          name = hash['name']
+          @_tags_hash[name] = Tag.new(name, hash, self)
+        end
+      end
+
+      @_tags_hash
     end
   end
 end

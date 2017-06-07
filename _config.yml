@@ -10,7 +10,7 @@ title: X-Cart 5 Site
 email: daemos@x-cart.com
 description: X-Cart is the free shopping cart software & solutions for high‑performing online stores
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://localhost:4000" # the base hostname & protocol for your site
+url: "http://api.x-cart.com" # the base hostname & protocol for your site
 encoding: utf-8
 repository: drdaemos/xc5-restapi
 ga_code: 
@@ -23,17 +23,6 @@ lsi: true
 
 kramdown:
   input: GFM
-
-index_path: "links.xml"
-
-elasticsearch:
-    host: "localhost:9200"
-    js_host: "kbsearch.x-cart.com"
-    js_user: "kbuser"
-    js_pass: "53cr37p4"
-    index: "usermanual"
-    type: "articles"
-    analyzer: "english"
 
 gems:
   - jekyll-redirect-from

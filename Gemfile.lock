@@ -1,6 +1,14 @@
 GIT
+  remote: git://github.com/drdaemos/swagger-jekyll.git
+  revision: 73ca0cb95c5e8f8acd6fc8d20a11f338c9681d80
+  branch: develop
+  specs:
+    swagger_jekyll (0.0.1)
+      hana
+
+GIT
   remote: git://github.com/xcart/jekyll-xcart-plugins.git
-  revision: ea4c4d2627462344f983ca3eaa37c24cf69dc8b3
+  revision: 76e2b7659c01db9adab9eb931e5cee23de8c88d1
   branch: master
   specs:
     jekyll-xcart-plugins (0.0.3)
@@ -17,7 +25,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    byebug (9.0.6)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -216,7 +223,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   elasticsearch
   github-pages
   hana
@@ -226,6 +232,7 @@ DEPENDENCIES
   jekyll-xcart-plugins!
   nokogiri
   oj
+  swagger_jekyll!
 
 BUNDLED WITH
    1.15.0

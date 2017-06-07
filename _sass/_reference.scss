@@ -90,8 +90,6 @@ article.reference {
         font-family: $mono-font-family;
         display: table-cell;
         padding-bottom: 0.5rem;
-        white-space: normal;
-        word-break: break-word;
     }
 
     .schema-field-type {
@@ -103,6 +101,8 @@ article.reference {
         padding-left: 1rem;
         display: table-cell;
         padding-bottom: 0.5rem;
+        white-space: normal;
+        word-break: break-word;
     }
 }
 
@@ -125,8 +125,6 @@ article.reference {
     .param-name {
         font-family: $mono-font-family;
         display: table-cell;
-        white-space: normal;
-        word-break: break-word;
         padding-bottom: 0.5rem;
     }
 

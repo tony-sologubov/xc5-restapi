@@ -50,7 +50,7 @@
         {% for response in verb.responses %}
             <div class="operation-response ui code-{{response.code}} segment">
                 <div class="ui accordion response-accordion">
-                    <div class="title">
+                    <div class="ui title">
                         {{response.code}}&nbsp;{{response.description}} <span class="operation-schema-type">{{ response.schema.compact_type | escape }}</span>
                         <i class="dropdown icon"></i>
                     </div>

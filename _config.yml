@@ -9,8 +9,8 @@
 title: X-Cart 5 REST API Reference
 email: daemos@x-cart.com
 description: X-Cart REST API Reference and Documentation
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://api.x-cart.com" # the base hostname & protocol for your site
+baseurl: "/rest-api" # the subpath of your site, e.g. /blog
+url: "http://devs.x-cart.com" # the base hostname & protocol for your site
 encoding: utf-8
 repository: xcart/xc5-restapi
 ga_code: 

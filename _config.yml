@@ -51,6 +51,15 @@ lang:
 
 sort_default: order
 
+header_container:
+  default: "container"
+  api_index: "reference container"
+  article: "text container"
+  article_with_sidebar: "container"
+  page: "text container"
+  reference: "reference container"
+  wide_page: "widepage container"
+
 # Category-wide Page ranking
 
 # category_pr:

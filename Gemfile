@@ -14,5 +14,5 @@ gem 'hana'
 group :jekyll_plugins do
   gem 'jekyll-xcart-plugins', github: "xcart/jekyll-xcart-plugins", branch: "master"
   gem 'jekyll-redirect-from'
-  gem 'swagger_jekyll', github: "drdaemos/swagger-jekyll", branch: "develop"
+  # gem 'swagger_jekyll', github: "drdaemos/swagger-jekyll", branch: "develop"
 end

@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/drdaemos/swagger-jekyll.git
-  revision: 73ca0cb95c5e8f8acd6fc8d20a11f338c9681d80
-  branch: develop
-  specs:
-    swagger_jekyll (0.0.1)
-      hana
-
-GIT
   remote: git://github.com/xcart/jekyll-xcart-plugins.git
   revision: 76e2b7659c01db9adab9eb931e5cee23de8c88d1
   branch: master
@@ -232,7 +224,6 @@ DEPENDENCIES
   jekyll-xcart-plugins!
   nokogiri
   oj
-  swagger_jekyll!
 
 BUNDLED WITH
-   1.15.0
+   1.15.3

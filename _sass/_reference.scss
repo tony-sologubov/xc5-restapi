@@ -1,5 +1,8 @@
 .jsonview {
     font-size: 0.85rem;
+
+    word-break: break-word;
+    word-wrap: break-word;
 }
 
 .example-json:not(.initialized) {

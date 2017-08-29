@@ -22,7 +22,8 @@ module JekyllXcart
         @site = context.registers[:site]
         @config = context.registers[:site].config
         @page = context.environments.first["page"]
-        @starting_level = @config['navigation_starting_level'] || 2
+
+        @starting_level = @page['menu_level'] || 2
         baseurl = context[@baseurl.strip]
 
         @menu_items = @site.pages.select { |item| item.data.fetch('lang', '') == @page.fetch('lang', @config['lang_default']) }
@@ -62,7 +63,12 @@ module JekyllXcart
         parts = item['url'].sub('/', '').gsub('index.html', '').split('/')
         itembase = parts.slice(0, level).join('/')
 
-        if item.data.fetch('show_in_sidebar', true) and item.data.fetch('title', '') and itembase == parent and parts.length > level and parts.length <= level + 1
+        if item.data.fetch('show_in_sidebar', true) && 
+           item.data.fetch('title', '') &&
+           itembase == parent &&
+           parts.length > level &&
+           parts.length <= level + 1
+
           # Menu item is active
           is_active = item['identifier'] == @page['identifier']
           active_class = is_active ? 'active' : ''
@@ -70,10 +76,12 @@ module JekyllXcart
           next_level = render_level(level + 1, parts.join('/'), is_active)
           has_next_level = next_level[:markup].length > 0
 
-          if not has_next_level && item.include?('hrefs')
-            next_level = render_hrefs(item, is_active)
-            has_next_level = next_level[:markup].length > 0
-          end
+          # href submenus
+          # -------------
+          # if not has_next_level && item.include?('hrefs')
+          #   next_level = render_hrefs(item, is_active)
+          #   has_next_level = next_level[:markup].length > 0
+          # end
 
           next_opener = has_next_level ? '<a class="opener"><i class="dropdown icon"></i></a>' : ''
           has_sub = has_next_level ? 'has-sub' : ''

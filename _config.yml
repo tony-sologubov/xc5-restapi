@@ -28,8 +28,6 @@ gems:
   - jekyll-redirect-from
   - jekyll-xcart-plugins
 
-navigation_starting_level: 2
-
 # APIs
 
 swagger_pages:

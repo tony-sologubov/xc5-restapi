@@ -24,8 +24,14 @@ $(document).ready(function() {
 });
 </script>
 
-{% endif %}
+{% endif %}  
 
+{% assign lang_current_part = page.lang | append: '/' %}
+{% assign version_part = page.api.version | prepend: '/v'  %}
+{% assign links_baseurl = page.url | remove_first: '/' | remove_first: lang_current_part | remove: 'index.html' | split: '/' | first %}
+
+{% assign links_baseurl = links_baseurl | append: version_part | prepend: '/' | prepend: site.baseurl %}
+<div id="json-link-base" data-base="{{ links_baseurl }}"></div>
 <script type='text/javascript'>
 function monkeyPatchJsonFormatter() {
     var formatter = window.JSONFormatter;
@@ -48,17 +54,18 @@ function monkeyPatchJsonFormatter() {
 }
 
 function getLinkByRef(ref) {
+    var base = document.getElementById('json-link-base').getAttribute('data-base');
     var page = '';
     var coreMatches = ref.match(/XLite\\Model\\(.+)>/i)
     var moduleMatches = ref.match(/XLite\\Module\\(.+?)Model\\(.+)>/i)
 
     if (moduleMatches) {
-        page = moduleMatches[1].replace('\\', '') + '/' + moduleMatches[2].replace('\\', '');
+        page = moduleMatches[1].replace('\\', '') + moduleMatches[2].replace('\\', '');
     } else if (coreMatches) {
-        page = coreMatches[1].replace('\\', '');
+        page = 'Core/' + coreMatches[1].replace('\\', '');
     }
 
-    return page + '.html';
+    return base + '/' + page + '.html';
 }
 
 function decodeHTMLEntities (text) {

@@ -43,17 +43,17 @@ layout: null
   }
 
   $(document).ready(function(){
-    if (getViewportWidth() > 991) {
-      setTimeout(startSticky, 0);
-    }
+    // if (getViewportWidth() > 991) {
+    //   setTimeout(startSticky, 0);
+    // }
 
-    $(window).resize(function() {
-      if (getViewportWidth() > 991) {
-        setTimeout(startSticky, 0);
-      } else {
-        setTimeout(disableSticky, 0);
-      }
-    });
+    // $(window).resize(function() {
+    //   if (getViewportWidth() > 991) {
+    //     setTimeout(startSticky, 0);
+    //   } else {
+    //     setTimeout(disableSticky, 0);
+    //   }
+    // });
 
     $('.content-opener[data-collapse]').click(function() {
       $('.icon', this).toggleClass('plus');

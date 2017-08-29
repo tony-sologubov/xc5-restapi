@@ -19,6 +19,8 @@ module SwaggerPages
       self.data['api']['version'] = spec.info.version
       self.data['api']['spec'] = spec
       self.data['api']['tags'] = tags
+      self.data['group'] = ''
+      self.data['menu_level'] = 2
       self.data['specfile'] = specfile
 
       self.data['title'] = "API Reference v#{spec.info.version}"

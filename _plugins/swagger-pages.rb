@@ -7,6 +7,9 @@ if defined?(Jekyll)
       safe true
       priority :low
 
+      class << self; attr_accessor :groups end
+      @groups = Hash.new
+
       def generate(site)
         @site = site
         @config = site.config['swagger_pages']
@@ -22,6 +25,7 @@ if defined?(Jekyll)
           specification = site.data[data_key]
           file = d['json']
           parse_spec(specification, file)
+          Generator.groups.clear
         end
       end
 
@@ -30,6 +34,10 @@ if defined?(Jekyll)
 
         tags.each do |tag, verbs|
           @site.pages << generate_page(tag, verbs, specification)
+        end
+
+        Generator.groups.each do |group, tags|
+          @site.pages << generate_group_index(group, specification, tags)
         end
 
         @site.pages << generate_api_index(tags, specification, file)
@@ -55,6 +63,17 @@ if defined?(Jekyll)
         end
       end
 
+      def generate_group_index(group, specification, tags)
+        dir = generator_path(specification.info.version)
+        data = {
+          'tags' => tags,
+          'specification' => specification,
+          'group' => group
+        }
+        GroupIndexPage.new(@site, @site.source, dir, data)
+      end
+
+
       def generate_api_index(tags, specification, file)
         dir = generator_path(specification.info.version)
         data = {
@@ -67,12 +86,45 @@ if defined?(Jekyll)
 
       def generate_page(tag, verbs, specification)
         dir = generator_path(specification.info.version)
+        group = get_group_by_tag(specification, tag)
+
         data = {
           'tag' => tag,
           'verbs' => verbs,
-          'specification' => specification
+          'specification' => specification,
+          'group' => group
         }
+
+        unless Generator.groups.include?(group)
+          Generator.groups[group] = []
+        end
+
+        Generator.groups[group] << compile_tag_info(tag, group, verbs, specification)
+
         CategoryPage.new(@site, @site.source, dir, data)
+      end
+
+      def compile_tag_info (tag, group, verbs, spec)
+        data = {
+          'name' => tag.gsub(group, '').gsub('\\', ''),
+          'description' => spec.tag(tag) ? spec.tag(tag).description : '',
+          'verbs' => verbs.map do |verb|
+            {
+              'title' => "[#{verb.verb}] #{verb.summary}",
+              'anchor' => '#' + verb.operationId
+            } end
+
+        }
+      end
+
+      def get_group_by_tag(specification, tag)
+        group = specification.tag(tag) ? specification.tag(tag).group : nil
+
+        if group.nil?
+          group = 'Core'
+        end
+
+        group
       end
 
       # Static: Return the generator path of the page

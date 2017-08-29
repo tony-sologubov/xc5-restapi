@@ -5,9 +5,9 @@
   </a>
   {% assign lang_current_part = page.lang | append: '/' %}
   {% assign version_part = page.api.version | prepend: '/v'  %}
+  {% assign group_part = page.group %}
   {% assign baseurl = page.url | remove_first: '/' | remove_first: lang_current_part | remove: 'index.html' | split: '/' | first %}
 
-  {% assign baseurl = baseurl | append: version_part %}
-
+  {% assign baseurl = baseurl | append: version_part | append: group_part %}
   {% navigation_menu baseurl %}
 </aside>

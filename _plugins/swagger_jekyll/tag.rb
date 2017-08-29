@@ -11,6 +11,10 @@ module SwaggerJekyll
       @hash['description']
     end
 
+    def group
+      @hash['x-group']
+    end
+
     def to_liquid
       @hash.dup.merge(
         'tag' => @tag,

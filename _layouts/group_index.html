@@ -1,0 +1,24 @@
+---
+layout: wide_page
+lang: en
+---
+<div class="ui stackable grid">
+    {% include sidebar.html %}
+
+    <article class="reference content sixteen wide tablet seven wide computer column">
+        {% include breadcrumbs.html %}
+        <h1 class="post-title">{{page.title}}</h1>
+
+        <div class="post-content">
+            <ul class="tags-list">
+            {% for tag in page.tags %}
+                <li>
+                    <p><b>{{ tag.name }}</b></p>
+                    <p>{{ tag.description }}</p>
+                    <br>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </article>
+</div>

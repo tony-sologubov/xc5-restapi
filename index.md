@@ -16,7 +16,7 @@ If you want to exchange data with X-Cart through an external script, [REST API]
 {% note warning %}
 Please note that X-Cart models and their API change over time, so some example requests might not be compatible with your X-Cart store. 
 
-Current latest version is [5.3.3.0]({{ '/api/v' | append: site.swagger_pages.latest_api | prepend: site.baseurl }}).
+Current latest version is [{{site.swagger_pages.latest_api}}]({{ '/api/v' | append: site.swagger_pages.latest_api | prepend: site.baseurl }}).
 {% endnote %}
 
 ## Table of Contents

@@ -8922,6 +8922,1915 @@
                     }
                 }
             }
+        },
+        "_path=cdev-featuredproducts-featuredproduct/0": {
+            "post": {
+                "tags": [
+                    "CDev\\FeaturedProducts\\FeaturedProduct"
+                ],
+                "summary": "Add featured product",
+                "operationId": "createCdev-featuredproducts-featuredproduct",
+                "parameters": [
+                    {
+                        "parameter": "cdev-featuredproducts-featuredproduct_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "FeaturedProduct object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-featuredproducts-featuredproduct/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\FeaturedProducts\\FeaturedProduct"
+                ],
+                "summary": "Retrieve featured product by id",
+                "operationId": "readCdev-featuredproducts-featuredproduct",
+                "parameters": [
+                    {
+                        "parameter": "cdev-featuredproducts-featuredproduct_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the FeaturedProduct object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\FeaturedProducts\\FeaturedProduct"
+                ],
+                "summary": "Update featured product by id",
+                "operationId": "updateCdev-featuredproducts-featuredproduct",
+                "parameters": [
+                    {
+                        "parameter": "cdev-featuredproducts-featuredproduct_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "FeaturedProduct object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-featuredproducts-featuredproduct_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the FeaturedProduct object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\FeaturedProducts\\FeaturedProduct"
+                ],
+                "summary": "Delete featured product by id",
+                "operationId": "deleteCdev-featuredproducts-featuredproduct",
+                "parameters": [
+                    {
+                        "parameter": "cdev-featuredproducts-featuredproduct_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the FeaturedProduct object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-featuredproducts-featuredproduct": {
+            "get": {
+                "tags": [
+                    "CDev\\FeaturedProducts\\FeaturedProduct"
+                ],
+                "summary": "Retrieve featured products by conditions",
+                "operationId": "readAllCdev-featuredproducts-featuredproduct",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\FeaturedProducts\\Model\\FeaturedProduct"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-fileattachments-product-attachment/0": {
+            "post": {
+                "tags": [
+                    "CDev\\FileAttachments\\Product\\Attachment"
+                ],
+                "summary": "Add product attachment",
+                "operationId": "createCdev-fileattachments-product-attachment",
+                "parameters": [
+                    {
+                        "parameter": "cdev-fileattachments-product-attachment_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Attachment object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-fileattachments-product-attachment/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\FileAttachments\\Product\\Attachment"
+                ],
+                "summary": "Retrieve product attachment by id",
+                "operationId": "readCdev-fileattachments-product-attachment",
+                "parameters": [
+                    {
+                        "parameter": "cdev-fileattachments-product-attachment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Attachment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\FileAttachments\\Product\\Attachment"
+                ],
+                "summary": "Update product attachment by id",
+                "operationId": "updateCdev-fileattachments-product-attachment",
+                "parameters": [
+                    {
+                        "parameter": "cdev-fileattachments-product-attachment_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Attachment object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-fileattachments-product-attachment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Attachment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\FileAttachments\\Product\\Attachment"
+                ],
+                "summary": "Delete product attachment by id",
+                "operationId": "deleteCdev-fileattachments-product-attachment",
+                "parameters": [
+                    {
+                        "parameter": "cdev-fileattachments-product-attachment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Attachment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-fileattachments-product-attachment": {
+            "get": {
+                "tags": [
+                    "CDev\\FileAttachments\\Product\\Attachment"
+                ],
+                "summary": "Retrieve product attachments by conditions",
+                "operationId": "readAllCdev-fileattachments-product-attachment",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\FileAttachments\\Model\\Product\\Attachment"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-pincodes-pincode/0": {
+            "post": {
+                "tags": [
+                    "CDev\\PINCodes\\PinCode"
+                ],
+                "summary": "Add pincode",
+                "operationId": "createCdev-pincodes-pincode",
+                "parameters": [
+                    {
+                        "parameter": "cdev-pincodes-pincode_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "PinCode object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-pincodes-pincode/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\PINCodes\\PinCode"
+                ],
+                "summary": "Retrieve pincode by id",
+                "operationId": "readCdev-pincodes-pincode",
+                "parameters": [
+                    {
+                        "parameter": "cdev-pincodes-pincode_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the PinCode object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\PINCodes\\PinCode"
+                ],
+                "summary": "Update pincode by id",
+                "operationId": "updateCdev-pincodes-pincode",
+                "parameters": [
+                    {
+                        "parameter": "cdev-pincodes-pincode_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "PinCode object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-pincodes-pincode_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the PinCode object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\PINCodes\\PinCode"
+                ],
+                "summary": "Delete pincode by id",
+                "operationId": "deleteCdev-pincodes-pincode",
+                "parameters": [
+                    {
+                        "parameter": "cdev-pincodes-pincode_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the PinCode object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-pincodes-pincode": {
+            "get": {
+                "tags": [
+                    "CDev\\PINCodes\\PinCode"
+                ],
+                "summary": "Retrieve pincodes by conditions",
+                "operationId": "readAllCdev-pincodes-pincode",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\PINCodes\\Model\\PinCode"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-productadvisor-productstats/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\ProductAdvisor\\ProductStats"
+                ],
+                "summary": "Retrieve product stats record by id",
+                "operationId": "readCdev-productadvisor-productstats",
+                "parameters": [
+                    {
+                        "parameter": "cdev-productadvisor-productstats_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the ProductStats object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\ProductAdvisor\\Model\\ProductStats"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-productadvisor-productstats": {
+            "get": {
+                "tags": [
+                    "CDev\\ProductAdvisor\\ProductStats"
+                ],
+                "summary": "Get product stats record by conditions",
+                "operationId": "readAllCdev-productadvisor-productstats",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\ProductAdvisor\\Model\\ProductStats"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-salestax-tax-rate/0": {
+            "post": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax\\Rate"
+                ],
+                "summary": "Add tax rate",
+                "operationId": "createCdev-salestax-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-salestax-tax-rate_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Rate object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-salestax-tax-rate/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax\\Rate"
+                ],
+                "summary": "Retrieve tax rate by id",
+                "operationId": "readCdev-salestax-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-salestax-tax-rate_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Rate object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax\\Rate"
+                ],
+                "summary": "Update tax rate by id",
+                "operationId": "updateCdev-salestax-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-salestax-tax-rate_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Rate object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-salestax-tax-rate_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Rate object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax\\Rate"
+                ],
+                "summary": "Delete tax rate by id",
+                "operationId": "deleteCdev-salestax-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-salestax-tax-rate_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Rate object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-salestax-tax-rate": {
+            "get": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax\\Rate"
+                ],
+                "summary": "Retrieve tax rates by conditions",
+                "operationId": "readAllCdev-salestax-tax-rate",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax\\Rate"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-salestax-tax/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax"
+                ],
+                "summary": "Retrieve tax type by id",
+                "operationId": "readCdev-salestax-tax",
+                "parameters": [
+                    {
+                        "parameter": "cdev-salestax-tax_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tax object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax"
+                ],
+                "summary": "Update tax type by id",
+                "operationId": "updateCdev-salestax-tax",
+                "parameters": [
+                    {
+                        "parameter": "cdev-salestax-tax_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tax object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-salestax-tax_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tax object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-salestax-tax": {
+            "get": {
+                "tags": [
+                    "CDev\\SalesTax\\Tax"
+                ],
+                "summary": "Retrieve tax types",
+                "operationId": "readAllCdev-salestax-tax",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\SalesTax\\Model\\Tax"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-simplecms-menu/0": {
+            "post": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Menu"
+                ],
+                "summary": "Add menu item",
+                "operationId": "createCdev-simplecms-menu",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-menu_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Menu object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-simplecms-menu/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Menu"
+                ],
+                "summary": "Retrieve menu item by id",
+                "operationId": "readCdev-simplecms-menu",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-menu_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Menu object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Menu"
+                ],
+                "summary": "Update menu item by id",
+                "operationId": "updateCdev-simplecms-menu",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-menu_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Menu object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-simplecms-menu_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Menu object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Menu"
+                ],
+                "summary": "Delete menu item by id",
+                "operationId": "deleteCdev-simplecms-menu",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-menu_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Menu object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-simplecms-menu": {
+            "get": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Menu"
+                ],
+                "summary": "Retrieve menu items by conditions",
+                "operationId": "readAllCdev-simplecms-menu",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Menu"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-simplecms-page/0": {
+            "post": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Page"
+                ],
+                "summary": "Add static page",
+                "operationId": "createCdev-simplecms-page",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-page_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Page object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-simplecms-page/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Page"
+                ],
+                "summary": "Retrieve static page by id",
+                "operationId": "readCdev-simplecms-page",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-page_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Page object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Page"
+                ],
+                "summary": "Update static page by id",
+                "operationId": "updateCdev-simplecms-page",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-page_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Page object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-simplecms-page_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Page object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Page"
+                ],
+                "summary": "Delete static page by id",
+                "operationId": "deleteCdev-simplecms-page",
+                "parameters": [
+                    {
+                        "parameter": "cdev-simplecms-page_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Page object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-simplecms-page": {
+            "get": {
+                "tags": [
+                    "CDev\\SimpleCMS\\Page"
+                ],
+                "summary": "Retrieve static pages by conditions",
+                "operationId": "readAllCdev-simplecms-page",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\SimpleCMS\\Model\\Page"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-vat-tax-rate/0": {
+            "post": {
+                "tags": [
+                    "CDev\\VAT\\Tax\\Rate"
+                ],
+                "summary": "Add tax rate",
+                "operationId": "createCdev-vat-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-vat-tax-rate_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Rate object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-vat-tax-rate/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\VAT\\Tax\\Rate"
+                ],
+                "summary": "Retrieve tax rate by id",
+                "operationId": "readCdev-vat-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-vat-tax-rate_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Rate object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\VAT\\Tax\\Rate"
+                ],
+                "summary": "Update tax rate by id",
+                "operationId": "updateCdev-vat-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-vat-tax-rate_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Rate object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-vat-tax-rate_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Rate object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\VAT\\Tax\\Rate"
+                ],
+                "summary": "Delete tax rate by id",
+                "operationId": "deleteCdev-vat-tax-rate",
+                "parameters": [
+                    {
+                        "parameter": "cdev-vat-tax-rate_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Rate object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-vat-tax-rate": {
+            "get": {
+                "tags": [
+                    "CDev\\VAT\\Tax\\Rate"
+                ],
+                "summary": "Retrieve tax rates by conditions",
+                "operationId": "readAllCdev-vat-tax-rate",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax\\Rate"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-vat-tax/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\VAT\\Tax"
+                ],
+                "summary": "Retrieve tax type by id",
+                "operationId": "readCdev-vat-tax",
+                "parameters": [
+                    {
+                        "parameter": "cdev-vat-tax_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tax object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\VAT\\Tax"
+                ],
+                "summary": "Update tax type by id",
+                "operationId": "updateCdev-vat-tax",
+                "parameters": [
+                    {
+                        "parameter": "cdev-vat-tax_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tax object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-vat-tax_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tax object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-vat-tax": {
+            "get": {
+                "tags": [
+                    "CDev\\VAT\\Tax"
+                ],
+                "summary": "Retrieve tax types",
+                "operationId": "readAllCdev-vat-tax",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\VAT\\Model\\Tax"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-volumediscounts-volumediscount/0": {
+            "post": {
+                "tags": [
+                    "CDev\\VolumeDiscounts\\VolumeDiscount"
+                ],
+                "summary": "Add volume discount",
+                "operationId": "createCdev-volumediscounts-volumediscount",
+                "parameters": [
+                    {
+                        "parameter": "cdev-volumediscounts-volumediscount_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "VolumeDiscount object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-volumediscounts-volumediscount/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\VolumeDiscounts\\VolumeDiscount"
+                ],
+                "summary": "Retrieve volume discount by id",
+                "operationId": "readCdev-volumediscounts-volumediscount",
+                "parameters": [
+                    {
+                        "parameter": "cdev-volumediscounts-volumediscount_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the VolumeDiscount object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\VolumeDiscounts\\VolumeDiscount"
+                ],
+                "summary": "Update volume discount by id",
+                "operationId": "updateCdev-volumediscounts-volumediscount",
+                "parameters": [
+                    {
+                        "parameter": "cdev-volumediscounts-volumediscount_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "VolumeDiscount object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-volumediscounts-volumediscount_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the VolumeDiscount object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\VolumeDiscounts\\VolumeDiscount"
+                ],
+                "summary": "Delete volume discount by id",
+                "operationId": "deleteCdev-volumediscounts-volumediscount",
+                "parameters": [
+                    {
+                        "parameter": "cdev-volumediscounts-volumediscount_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the VolumeDiscount object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-volumediscounts-volumediscount": {
+            "get": {
+                "tags": [
+                    "CDev\\VolumeDiscounts\\VolumeDiscount"
+                ],
+                "summary": "Retrieve volume discounts by conditions",
+                "operationId": "readAllCdev-volumediscounts-volumediscount",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\VolumeDiscounts\\Model\\VolumeDiscount"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-wholesale-minquantity/0": {
+            "post": {
+                "tags": [
+                    "CDev\\Wholesale\\MinQuantity"
+                ],
+                "summary": "Add minimum purchase quantity tier",
+                "operationId": "createCdev-wholesale-minquantity",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-minquantity_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "MinQuantity object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-wholesale-minquantity/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\Wholesale\\MinQuantity"
+                ],
+                "summary": "Retrieve minimum purchase quantity tier by id",
+                "operationId": "readCdev-wholesale-minquantity",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-minquantity_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MinQuantity object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\Wholesale\\MinQuantity"
+                ],
+                "summary": "Update minimum purchase quantity tier by id",
+                "operationId": "updateCdev-wholesale-minquantity",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-minquantity_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "MinQuantity object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-wholesale-minquantity_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MinQuantity object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\Wholesale\\MinQuantity"
+                ],
+                "summary": "Delete minimum purchase quantity tier by id",
+                "operationId": "deleteCdev-wholesale-minquantity",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-minquantity_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MinQuantity object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-wholesale-minquantity": {
+            "get": {
+                "tags": [
+                    "CDev\\Wholesale\\MinQuantity"
+                ],
+                "summary": "Retrieve minimum purchase quantity tiers by conditions",
+                "operationId": "readAllCdev-wholesale-minquantity",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\MinQuantity"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-wholesale-wholesaleprice/0": {
+            "post": {
+                "tags": [
+                    "CDev\\Wholesale\\WholesalePrice"
+                ],
+                "summary": "Add wholesale price tier",
+                "operationId": "createCdev-wholesale-wholesaleprice",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-wholesaleprice_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "WholesalePrice object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-wholesale-wholesaleprice/{id}": {
+            "get": {
+                "tags": [
+                    "CDev\\Wholesale\\WholesalePrice"
+                ],
+                "summary": "Retrieve wholesale price tier by id",
+                "operationId": "readCdev-wholesale-wholesaleprice",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-wholesaleprice_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the WholesalePrice object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CDev\\Wholesale\\WholesalePrice"
+                ],
+                "summary": "Update wholesale price tier by id",
+                "operationId": "updateCdev-wholesale-wholesaleprice",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-wholesaleprice_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "WholesalePrice object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                        }
+                    },
+                    {
+                        "parameter": "cdev-wholesale-wholesaleprice_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the WholesalePrice object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "CDev\\Wholesale\\WholesalePrice"
+                ],
+                "summary": "Delete wholesale price tier by id",
+                "operationId": "deleteCdev-wholesale-wholesaleprice",
+                "parameters": [
+                    {
+                        "parameter": "cdev-wholesale-wholesaleprice_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the WholesalePrice object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=cdev-wholesale-wholesaleprice": {
+            "get": {
+                "tags": [
+                    "CDev\\Wholesale\\WholesalePrice"
+                ],
+                "summary": "Retrieve wholesale price tiers by conditions",
+                "operationId": "readAllCdev-wholesale-wholesaleprice",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -16866,6 +18775,132 @@
             },
             "x-display-name": "UsedCoupon",
             "x-group": "CDev\\Coupons"
+        },
+        {
+            "name": "CDev\\FeaturedProducts\\FeaturedProduct",
+            "description": "FeaturedProduct represents the presence of the product marked as featured in the certain category",
+            "externalDocs": {
+                "description": "Find out more about featured products",
+                "url": "http://kb.x-cart.com/en/products/adding_featured_products.html"
+            },
+            "x-display-name": "FeaturedProduct",
+            "x-group": "CDev\\FeaturedProducts"
+        },
+        {
+            "name": "CDev\\FileAttachments\\Product\\Attachment",
+            "description": "Attachment repo holds the record on the files attached to the product",
+            "externalDocs": {
+                "description": "Find out more about attachments and digital goods",
+                "url": "http://kb.x-cart.com/en/products/adding_digital_goods.html"
+            },
+            "x-display-name": "Product\\Attachment",
+            "x-group": "CDev\\FileAttachments"
+        },
+        {
+            "name": "CDev\\FeaturedProducts\\FeaturedProduct",
+            "description": "Pincode allows to attach some text information (e.g. CD key, product registration code) to the product and sell it within",
+            "x-display-name": "FeaturedProduct",
+            "x-group": "CDev\\FeaturedProducts"
+        },
+        {
+            "name": "CDev\\ProductAdvisor\\ProductStats",
+            "description": "ProductStats store the statistic records for the 'Customers who viewed this product bought' widget",
+            "externalDocs": {
+                "description": "Find out more about featured products",
+                "url": "http://kb.x-cart.com/en/products/adding_featured_products.html"
+            },
+            "x-display-name": "ProductStats",
+            "x-group": "CDev\\ProductAdvisor"
+        },
+        {
+            "name": "CDev\\SalesTax\\Tax\\Rate",
+            "description": "Tax\\Rate represents single tax rate record associated with the Sales tax type.",
+            "externalDocs": {
+                "description": "Find out more about setting up taxes",
+                "url": "http://kb.x-cart.com/en/taxes/"
+            },
+            "x-display-name": "Tax\\Rate",
+            "x-group": "CDev\\SalesTax"
+        },
+        {
+            "name": "CDev\\SalesTax\\Tax",
+            "description": "Tax model keeps track of tax types, such as VAT type, Sales Tax type etc. It can have from one to many tax rate records.",
+            "externalDocs": {
+                "description": "Find out more about setting up taxes",
+                "url": "http://kb.x-cart.com/en/taxes/"
+            },
+            "x-display-name": "Tax",
+            "x-group": "CDev\\SalesTax"
+        },
+        {
+            "name": "CDev\\SimpleCMS\\Menu",
+            "description": "Menu represents a menu item with possible subitems.",
+            "externalDocs": {
+                "description": "Find out more about adding items to the header and footer menus",
+                "url": "http://kb.x-cart.com/en/look_and_feel/adding_new_items_to_your_stores_menus.html"
+            },
+            "x-display-name": "Menu",
+            "x-group": "CDev\\SimpleCMS"
+        },
+        {
+            "name": "CDev\\SimpleCMS\\Page",
+            "description": "Page repo contains the static pages of the site.",
+            "externalDocs": {
+                "description": "Find out more about adding pages to your store",
+                "url": "http://kb.x-cart.com/en/look_and_feel/adding_pages_to_your_store.html"
+            },
+            "x-display-name": "Page",
+            "x-group": "CDev\\SimpleCMS"
+        },
+        {
+            "name": "CDev\\VAT\\Tax\\Rate",
+            "description": "Tax\\Rate represents single tax rate record associated with the VAT tax type.",
+            "externalDocs": {
+                "description": "Find out more about setting up taxes",
+                "url": "http://kb.x-cart.com/en/taxes/"
+            },
+            "x-display-name": "Tax\\Rate",
+            "x-group": "CDev\\VAT"
+        },
+        {
+            "name": "CDev\\VAT\\Tax",
+            "description": "Tax model keeps track of tax types, such as VAT type, Sales Tax type etc. It can have from one to many tax rate records.",
+            "externalDocs": {
+                "description": "Find out more about setting up taxes",
+                "url": "http://kb.x-cart.com/en/taxes/"
+            },
+            "x-display-name": "Tax",
+            "x-group": "CDev\\VAT"
+        },
+        {
+            "name": "CDev\\VolumeDiscounts\\VolumeDiscount",
+            "description": "Volume discount record keeps data about discount tiers",
+            "externalDocs": {
+                "description": "Find out more about setting up volume discounts",
+                "url": "http://kb.x-cart.com/en/seo_and_promotion/setting_up_volume_discounts_for_products.html"
+            },
+            "x-display-name": "VolumeDiscount",
+            "x-group": "CDev\\VolumeDiscounts"
+        },
+        {
+            "name": "CDev\\Wholesale\\MinQuantity",
+            "description": "MinQuantity record represents minumum purchase quantity tier for a certain product-membership pair",
+            "externalDocs": {
+                "description": "Find out more about setting up wholesale price and minimum purchase quantities",
+                "url": "http://kb.x-cart.com/en/products/setting_up_wholesale_prices_and_minimum_purchase_quantites_for_different_membership_levels.html"
+            },
+            "x-display-name": "MinQuantity",
+            "x-group": "CDev\\Wholesale"
+        },
+        {
+            "name": "CDev\\Wholesale\\WholesalePrice",
+            "description": "WholesalePrice record keeps data about wholesale discount tiers of a certain product and membership",
+            "externalDocs": {
+                "description": "Find out more about setting up wholesale price and minimum purchase quantities",
+                "url": "http://kb.x-cart.com/en/products/setting_up_wholesale_prices_and_minimum_purchase_quantites_for_different_membership_levels.html"
+            },
+            "x-display-name": "WholesalePrice",
+            "x-group": "CDev\\Wholesale"
         }
     ],
     "externalDocs": {

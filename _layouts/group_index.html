@@ -10,15 +10,24 @@ lang: en
         <h1 class="post-title">{{page.title}}</h1>
 
         <div class="post-content">
-            <ul class="tags-list">
+            <div class="tags-list ui stackable grid">
             {% for tag in page.tags %}
-                <li>
-                    <p><b>{{ tag.name }}</b></p>
-                    <p>{{ tag.description }}</p>
-                    <br>
-                </li>
+                <div class="eight wide column">
+                    <div class="ui card" style="height: 100%;">
+                        <div class="content">
+                            <div class="header" style="word-wrap: break-word;">{{ tag.name }}</div>
+                            <div class="description">{{ tag.description }}</div>
+                        </div>                    
+                        {% if tag.external %}
+                        <div class="extra content">
+                        <i class="linkify icon"></i>
+                        <a href="{{ tag.external.url }}" target="_blank">{{ tag.external.description }}</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             {% endfor %}
-            </ul>
+            </div>
         </div>
     </article>
 </div>

@@ -108,6 +108,7 @@ if defined?(Jekyll)
         data = {
           'name' => tag.gsub(group, '').gsub('\\', ''),
           'description' => spec.tag(tag) ? spec.tag(tag).description : '',
+          'external' => spec.tag(tag) ? spec.tag(tag).externalDocs : nil,
           'verbs' => verbs.map do |verb|
             {
               'title' => "[#{verb.verb}] #{verb.summary}",

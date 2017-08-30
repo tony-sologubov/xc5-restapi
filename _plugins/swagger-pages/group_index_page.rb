@@ -24,6 +24,7 @@ module SwaggerPages
       self.data['tags'] = tags
       self.data['group'] = '/' + sanitize_filename(group)
       self.data['menu_level'] = 3
+      self.data['order'] = (group === 'Core' ? 50 : 100)
       self.data['title'] = group + ' resources'
     end
 

@@ -15,6 +15,10 @@ module SwaggerJekyll
       @hash['x-group']
     end
 
+    def externalDocs
+      @hash['externalDocs']
+    end
+
     def to_liquid
       @hash.dup.merge(
         'tag' => @tag,

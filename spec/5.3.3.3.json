@@ -6252,6 +6252,168 @@
                 }
             }
         },
+        "_path=product-globaltab/0": {
+            "post": {
+                "tags": [
+                    "Product\\GlobalTab"
+                ],
+                "summary": "Add global tab",
+                "operationId": "createProduct-globaltab",
+                "parameters": [
+                    {
+                        "parameter": "product-globaltab_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "GlobalTab object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=product-globaltab/{id}": {
+            "get": {
+                "tags": [
+                    "Product\\GlobalTab"
+                ],
+                "summary": "Retrieve global tab by id",
+                "operationId": "readProduct-globaltab",
+                "parameters": [
+                    {
+                        "parameter": "product-globaltab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the GlobalTab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Product\\GlobalTab"
+                ],
+                "summary": "Update global tab by id",
+                "operationId": "updateProduct-globaltab",
+                "parameters": [
+                    {
+                        "parameter": "product-globaltab_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "GlobalTab object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                        }
+                    },
+                    {
+                        "parameter": "product-globaltab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the GlobalTab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Product\\GlobalTab"
+                ],
+                "summary": "Delete global tab by id",
+                "operationId": "deleteProduct-globaltab",
+                "parameters": [
+                    {
+                        "parameter": "product-globaltab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the GlobalTab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=product-globaltab": {
+            "get": {
+                "tags": [
+                    "Product\\GlobalTab"
+                ],
+                "summary": "Retrieve global tabs by conditions",
+                "operationId": "readAllProduct-globaltab",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Model\\Product\\GlobalTab"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "_path=product/0": {
             "post": {
                 "tags": [
@@ -10826,6 +10988,1975 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#/definitions/XLite\\Module\\CDev\\Wholesale\\Model\\WholesalePrice"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customerattachments-orderitem-attachment-attachment/0": {
+            "post": {
+                "tags": [
+                    "XC\\CustomerAttachments\\OrderItem\\Attachment\\Attachment"
+                ],
+                "summary": "Add customer attachment",
+                "operationId": "createXc-customerattachments-orderitem-attachment-attachment",
+                "parameters": [
+                    {
+                        "parameter": "xc-customerattachments-orderitem-attachment-attachment_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Attachment object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customerattachments-orderitem-attachment-attachment/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\CustomerAttachments\\OrderItem\\Attachment\\Attachment"
+                ],
+                "summary": "Retrieve customer attachment by id",
+                "operationId": "readXc-customerattachments-orderitem-attachment-attachment",
+                "parameters": [
+                    {
+                        "parameter": "xc-customerattachments-orderitem-attachment-attachment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Attachment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\CustomerAttachments\\OrderItem\\Attachment\\Attachment"
+                ],
+                "summary": "Update customer attachment by id",
+                "operationId": "updateXc-customerattachments-orderitem-attachment-attachment",
+                "parameters": [
+                    {
+                        "parameter": "xc-customerattachments-orderitem-attachment-attachment_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Attachment object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                        }
+                    },
+                    {
+                        "parameter": "xc-customerattachments-orderitem-attachment-attachment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Attachment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\CustomerAttachments\\OrderItem\\Attachment\\Attachment"
+                ],
+                "summary": "Delete customer attachment by id",
+                "operationId": "deleteXc-customerattachments-orderitem-attachment-attachment",
+                "parameters": [
+                    {
+                        "parameter": "xc-customerattachments-orderitem-attachment-attachment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Attachment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customerattachments-orderitem-attachment-attachment": {
+            "get": {
+                "tags": [
+                    "XC\\CustomerAttachments\\OrderItem\\Attachment\\Attachment"
+                ],
+                "summary": "Retrieve customer attachments by conditions",
+                "operationId": "readAllXc-customerattachments-orderitem-attachment-attachment",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\CustomerAttachments\\Model\\OrderItem\\Attachment\\Attachment"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customproducttabs-product-customglobaltab/0": {
+            "post": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\CustomGlobalTab"
+                ],
+                "summary": "Add custom global tab",
+                "operationId": "createXc-customproducttabs-product-customglobaltab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-customglobaltab_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "CustomGlobalTab object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customproducttabs-product-customglobaltab/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\CustomGlobalTab"
+                ],
+                "summary": "Retrieve custom global tab by id",
+                "operationId": "readXc-customproducttabs-product-customglobaltab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-customglobaltab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the CustomGlobalTab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\CustomGlobalTab"
+                ],
+                "summary": "Update custom global tab by id",
+                "operationId": "updateXc-customproducttabs-product-customglobaltab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-customglobaltab_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "CustomGlobalTab object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                        }
+                    },
+                    {
+                        "parameter": "xc-customproducttabs-product-customglobaltab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the CustomGlobalTab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\CustomGlobalTab"
+                ],
+                "summary": "Delete custom global tab by id",
+                "operationId": "deleteXc-customproducttabs-product-customglobaltab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-customglobaltab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the CustomGlobalTab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customproducttabs-product-customglobaltab": {
+            "get": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\CustomGlobalTab"
+                ],
+                "summary": "Retrieve custom global tabs by conditions",
+                "operationId": "readAllXc-customproducttabs-product-customglobaltab",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\CustomGlobalTab"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customproducttabs-product-tab/0": {
+            "post": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\Tab"
+                ],
+                "summary": "Add product tab",
+                "operationId": "createXc-customproducttabs-product-tab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-tab_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tab object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customproducttabs-product-tab/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\Tab"
+                ],
+                "summary": "Retrieve product tab by id",
+                "operationId": "readXc-customproducttabs-product-tab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-tab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\Tab"
+                ],
+                "summary": "Update product tab by id",
+                "operationId": "updateXc-customproducttabs-product-tab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-tab_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tab object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                        }
+                    },
+                    {
+                        "parameter": "xc-customproducttabs-product-tab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\Tab"
+                ],
+                "summary": "Delete product tab by id",
+                "operationId": "deleteXc-customproducttabs-product-tab",
+                "parameters": [
+                    {
+                        "parameter": "xc-customproducttabs-product-tab_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tab object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-customproducttabs-product-tab": {
+            "get": {
+                "tags": [
+                    "XC\\CustomProductTabs\\Product\\Tab"
+                ],
+                "summary": "Retrieve product tabs by conditions",
+                "operationId": "readAllXc-customproducttabs-product-tab",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\CustomProductTabs\\Model\\Product\\Tab"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimpgroup/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpGroup"
+                ],
+                "summary": "Retrieve mailchimp group by id",
+                "operationId": "readXc-mailchimp-mailchimpgroup",
+                "parameters": [
+                    {
+                        "parameter": "xc-mailchimp-mailchimpgroup_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MailChimpGroup object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpGroup"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimpgroup": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpGroup"
+                ],
+                "summary": "Retrieve mailchimp groups by conditions",
+                "operationId": "readAllXc-mailchimp-mailchimpgroup",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpGroup"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimpgroupname/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpGroupName"
+                ],
+                "summary": "Retrieve mailchimp group name by id",
+                "operationId": "readXc-mailchimp-mailchimpgroupname",
+                "parameters": [
+                    {
+                        "parameter": "xc-mailchimp-mailchimpgroupname_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MailChimpGroupName object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpGroupName"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimpgroupname": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpGroupName"
+                ],
+                "summary": "Retrieve mailchimp group names by conditions",
+                "operationId": "readAllXc-mailchimp-mailchimpgroupname",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpGroupName"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimplist/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpList"
+                ],
+                "summary": "Retrieve mailchimp list by id",
+                "operationId": "readXc-mailchimp-mailchimplist",
+                "parameters": [
+                    {
+                        "parameter": "xc-mailchimp-mailchimplist_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MailChimpList object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpList"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimplist": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpList"
+                ],
+                "summary": "Retrieve mailchimp lists by conditions",
+                "operationId": "readAllXc-mailchimp-mailchimplist",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpList"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimpsegment/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpSegment"
+                ],
+                "summary": "Retrieve mailchimp segment by id",
+                "operationId": "readXc-mailchimp-mailchimpsegment",
+                "parameters": [
+                    {
+                        "parameter": "xc-mailchimp-mailchimpsegment_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MailChimpSegment object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpSegment"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-mailchimpsegment": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\MailChimpSegment"
+                ],
+                "summary": "Retrieve mailchimp segments by conditions",
+                "operationId": "readAllXc-mailchimp-mailchimpsegment",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\MailChimpSegment"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-store/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\Store"
+                ],
+                "summary": "Retrieve mailchimp stores by id",
+                "operationId": "readXc-mailchimp-store",
+                "parameters": [
+                    {
+                        "parameter": "xc-mailchimp-store_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Store object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\Store"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mailchimp-store": {
+            "get": {
+                "tags": [
+                    "XC\\MailChimp\\Store"
+                ],
+                "summary": "Retrieve mailchimp stores by conditions",
+                "operationId": "readAllXc-mailchimp-store",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\MailChimp\\Model\\Store"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mandrill-mandrillmail/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\Mandrill\\MandrillMail"
+                ],
+                "summary": "Retrieve mandrill mail stats by id",
+                "operationId": "readXc-mandrill-mandrillmail",
+                "parameters": [
+                    {
+                        "parameter": "xc-mandrill-mandrillmail_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the MandrillMail object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Mandrill\\Model\\MandrillMail"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-mandrill-mandrillmail": {
+            "get": {
+                "tags": [
+                    "XC\\Mandrill\\MandrillMail"
+                ],
+                "summary": "Retrieve mandrill mail stats by conditions",
+                "operationId": "readAllXc-mandrill-mandrillmail",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\Mandrill\\Model\\MandrillMail"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-news-newsmessage/0": {
+            "post": {
+                "tags": [
+                    "XC\\News\\NewsMessage"
+                ],
+                "summary": "Add order review record",
+                "operationId": "createXc-news-newsmessage",
+                "parameters": [
+                    {
+                        "parameter": "xc-news-newsmessage_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "NewsMessage object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-news-newsmessage/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\News\\NewsMessage"
+                ],
+                "summary": "Retrieve order review record by id",
+                "operationId": "readXc-news-newsmessage",
+                "parameters": [
+                    {
+                        "parameter": "xc-news-newsmessage_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the NewsMessage object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\News\\NewsMessage"
+                ],
+                "summary": "Update order review record by id",
+                "operationId": "updateXc-news-newsmessage",
+                "parameters": [
+                    {
+                        "parameter": "xc-news-newsmessage_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "NewsMessage object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                        }
+                    },
+                    {
+                        "parameter": "xc-news-newsmessage_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the NewsMessage object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\News\\NewsMessage"
+                ],
+                "summary": "Delete order review record by id",
+                "operationId": "deleteXc-news-newsmessage",
+                "parameters": [
+                    {
+                        "parameter": "xc-news-newsmessage_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the NewsMessage object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-news-newsmessage": {
+            "get": {
+                "tags": [
+                    "XC\\News\\NewsMessage"
+                ],
+                "summary": "Retrieve order review records by conditions",
+                "operationId": "readAllXc-news-newsmessage",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\News\\Model\\NewsMessage"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-newslettersubscriptions-subscriber/0": {
+            "post": {
+                "tags": [
+                    "XC\\NewsletterSubscriptions\\Subscriber"
+                ],
+                "summary": "Add newsletter subscriber",
+                "operationId": "createXc-newslettersubscriptions-subscriber",
+                "parameters": [
+                    {
+                        "parameter": "xc-newslettersubscriptions-subscriber_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Subscriber object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-newslettersubscriptions-subscriber/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\NewsletterSubscriptions\\Subscriber"
+                ],
+                "summary": "Retrieve newsletter subscriber by id",
+                "operationId": "readXc-newslettersubscriptions-subscriber",
+                "parameters": [
+                    {
+                        "parameter": "xc-newslettersubscriptions-subscriber_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Subscriber object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\NewsletterSubscriptions\\Subscriber"
+                ],
+                "summary": "Update newsletter subscriber by id",
+                "operationId": "updateXc-newslettersubscriptions-subscriber",
+                "parameters": [
+                    {
+                        "parameter": "xc-newslettersubscriptions-subscriber_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Subscriber object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                        }
+                    },
+                    {
+                        "parameter": "xc-newslettersubscriptions-subscriber_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Subscriber object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\NewsletterSubscriptions\\Subscriber"
+                ],
+                "summary": "Delete newsletter subscriber by id",
+                "operationId": "deleteXc-newslettersubscriptions-subscriber",
+                "parameters": [
+                    {
+                        "parameter": "xc-newslettersubscriptions-subscriber_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Subscriber object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-newslettersubscriptions-subscriber": {
+            "get": {
+                "tags": [
+                    "XC\\NewsletterSubscriptions\\Subscriber"
+                ],
+                "summary": "Retrieve newsletter subscribers by conditions",
+                "operationId": "readAllXc-newslettersubscriptions-subscriber",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\NewsletterSubscriptions\\Model\\Subscriber"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-producttags-tag/0": {
+            "post": {
+                "tags": [
+                    "XC\\ProductTags\\Tag"
+                ],
+                "summary": "Add product tag",
+                "operationId": "createXc-producttags-tag",
+                "parameters": [
+                    {
+                        "parameter": "xc-producttags-tag_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tag object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-producttags-tag/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\ProductTags\\Tag"
+                ],
+                "summary": "Retrieve product tag by id",
+                "operationId": "readXc-producttags-tag",
+                "parameters": [
+                    {
+                        "parameter": "xc-producttags-tag_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tag object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\ProductTags\\Tag"
+                ],
+                "summary": "Update product tag by id",
+                "operationId": "updateXc-producttags-tag",
+                "parameters": [
+                    {
+                        "parameter": "xc-producttags-tag_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tag object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                        }
+                    },
+                    {
+                        "parameter": "xc-producttags-tag_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tag object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\ProductTags\\Tag"
+                ],
+                "summary": "Delete product tag by id",
+                "operationId": "deleteXc-producttags-tag",
+                "parameters": [
+                    {
+                        "parameter": "xc-producttags-tag_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Tag object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-producttags-tag": {
+            "get": {
+                "tags": [
+                    "XC\\ProductTags\\Tag"
+                ],
+                "summary": "Retrieve product tags by conditions",
+                "operationId": "readAllXc-producttags-tag",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\ProductTags\\Model\\Tag"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-productvariants-productvariant/0": {
+            "post": {
+                "tags": [
+                    "XC\\ProductVariants\\ProductVariant"
+                ],
+                "summary": "Add product variant",
+                "operationId": "createXc-productvariants-productvariant",
+                "parameters": [
+                    {
+                        "parameter": "xc-productvariants-productvariant_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "ProductVariant object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-productvariants-productvariant/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\ProductVariants\\ProductVariant"
+                ],
+                "summary": "Retrieve product variant by id",
+                "operationId": "readXc-productvariants-productvariant",
+                "parameters": [
+                    {
+                        "parameter": "xc-productvariants-productvariant_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the ProductVariant object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\ProductVariants\\ProductVariant"
+                ],
+                "summary": "Update product variant by id",
+                "operationId": "updateXc-productvariants-productvariant",
+                "parameters": [
+                    {
+                        "parameter": "xc-productvariants-productvariant_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "ProductVariant object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                        }
+                    },
+                    {
+                        "parameter": "xc-productvariants-productvariant_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the ProductVariant object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\ProductVariants\\ProductVariant"
+                ],
+                "summary": "Delete product variant by id",
+                "operationId": "deleteXc-productvariants-productvariant",
+                "parameters": [
+                    {
+                        "parameter": "xc-productvariants-productvariant_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the ProductVariant object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-productvariants-productvariant": {
+            "get": {
+                "tags": [
+                    "XC\\ProductVariants\\ProductVariant"
+                ],
+                "summary": "Retrieve product variants by conditions",
+                "operationId": "readAllXc-productvariants-productvariant",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\ProductVariants\\Model\\ProductVariant"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-reviews-review/0": {
+            "post": {
+                "tags": [
+                    "XC\\Reviews\\Review"
+                ],
+                "summary": "Add product review",
+                "operationId": "createXc-reviews-review",
+                "parameters": [
+                    {
+                        "parameter": "xc-reviews-review_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Review object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-reviews-review/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\Reviews\\Review"
+                ],
+                "summary": "Retrieve product review by id",
+                "operationId": "readXc-reviews-review",
+                "parameters": [
+                    {
+                        "parameter": "xc-reviews-review_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Review object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\Reviews\\Review"
+                ],
+                "summary": "Update product review by id",
+                "operationId": "updateXc-reviews-review",
+                "parameters": [
+                    {
+                        "parameter": "xc-reviews-review_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "Review object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                        }
+                    },
+                    {
+                        "parameter": "xc-reviews-review_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Review object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\Reviews\\Review"
+                ],
+                "summary": "Delete product review by id",
+                "operationId": "deleteXc-reviews-review",
+                "parameters": [
+                    {
+                        "parameter": "xc-reviews-review_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the Review object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-reviews-review": {
+            "get": {
+                "tags": [
+                    "XC\\Reviews\\Review"
+                ],
+                "summary": "Retrieve product reviews by conditions",
+                "operationId": "readAllXc-reviews-review",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\Reviews\\Model\\Review"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-upselling-upsellingproduct/0": {
+            "post": {
+                "tags": [
+                    "XC\\Upselling\\UpsellingProduct"
+                ],
+                "summary": "Add related product record",
+                "operationId": "createXc-upselling-upsellingproduct",
+                "parameters": [
+                    {
+                        "parameter": "xc-upselling-upsellingproduct_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "UpsellingProduct object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-upselling-upsellingproduct/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\Upselling\\UpsellingProduct"
+                ],
+                "summary": "Retrieve related product record by id",
+                "operationId": "readXc-upselling-upsellingproduct",
+                "parameters": [
+                    {
+                        "parameter": "xc-upselling-upsellingproduct_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the UpsellingProduct object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "XC\\Upselling\\UpsellingProduct"
+                ],
+                "summary": "Update related product record by id",
+                "operationId": "updateXc-upselling-upsellingproduct",
+                "parameters": [
+                    {
+                        "parameter": "xc-upselling-upsellingproduct_body",
+                        "name": "body",
+                        "in": "body",
+                        "description": "UpsellingProduct object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                        }
+                    },
+                    {
+                        "parameter": "xc-upselling-upsellingproduct_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the UpsellingProduct object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "XC\\Upselling\\UpsellingProduct"
+                ],
+                "summary": "Delete related product record by id",
+                "operationId": "deleteXc-upselling-upsellingproduct",
+                "parameters": [
+                    {
+                        "parameter": "xc-upselling-upsellingproduct_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the UpsellingProduct object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-upselling-upsellingproduct": {
+            "get": {
+                "tags": [
+                    "XC\\Upselling\\UpsellingProduct"
+                ],
+                "summary": "Retrieve related product records by conditions",
+                "operationId": "readAllXc-upselling-upsellingproduct",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\Upselling\\Model\\UpsellingProduct"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-zapier-hooksubscriber/{id}": {
+            "get": {
+                "tags": [
+                    "XC\\Zapier\\HookSubscriber"
+                ],
+                "summary": "Retrieve zapier hook subscriber by id",
+                "operationId": "readXc-zapier-hooksubscriber",
+                "parameters": [
+                    {
+                        "parameter": "xc-zapier-hooksubscriber_id",
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id value of the HookSubscriber object",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/XLite\\Module\\XC\\Zapier\\Model\\HookSubscriber"
+                        }
+                    }
+                }
+            }
+        },
+        "_path=xc-zapier-hooksubscriber": {
+            "get": {
+                "tags": [
+                    "XC\\Zapier\\HookSubscriber"
+                ],
+                "summary": "Retrieve zapier hook subscribers by conditions",
+                "operationId": "readAllXc-zapier-hooksubscriber",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[limit]",
+                        "name": "_cnd[limit]",
+                        "description": "Sets the offset (first item) and the limit (second item)",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    },
+                    {
+                        "in": "query",
+                        "required": false,
+                        "parameter": "_cnd[orderBy]",
+                        "name": "_cnd[orderBy]",
+                        "description": "Sets sorting order field",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/XLite\\Module\\XC\\Zapier\\Model\\HookSubscriber"
                             }
                         }
                     }
@@ -18749,6 +20880,10 @@
     },
     "tags": [
         {
+            "name": "Product\\GlobalTab",
+            "description": "This repo stores user-created global product tabs."
+        },
+        {
             "name": "Product",
             "description": "Product is the building block of your store. It contains data about certain good you trade and is identified by SKU. Product is tightly coupled with its Category and Attributes.",
             "externalDocs": {
@@ -18797,10 +20932,10 @@
             "x-group": "CDev\\FileAttachments"
         },
         {
-            "name": "CDev\\FeaturedProducts\\FeaturedProduct",
+            "name": "CDev\\PINCodes\\PinCode",
             "description": "Pincode allows to attach some text information (e.g. CD key, product registration code) to the product and sell it within",
-            "x-display-name": "FeaturedProduct",
-            "x-group": "CDev\\FeaturedProducts"
+            "x-display-name": "PinCode",
+            "x-group": "CDev\\PINCodes"
         },
         {
             "name": "CDev\\ProductAdvisor\\ProductStats",
@@ -18901,6 +21036,102 @@
             },
             "x-display-name": "WholesalePrice",
             "x-group": "CDev\\Wholesale"
+        },
+        {
+            "name": "XC\\CustomerAttachments\\OrderItem\\Attachment\\Attachment",
+            "description": "This repo stores user-created global product tabs.",
+            "x-display-name": "OrderItem\\Attachment\\Attachment",
+            "x-group": "XC\\CustomerAttachments"
+        },
+        {
+            "name": "XC\\CustomProductTabs\\Product\\CustomGlobalTab",
+            "description": "This repo stores user-created global product tabs.",
+            "x-display-name": "Product\\CustomGlobalTab",
+            "x-group": "XC\\CustomProductTabs"
+        },
+        {
+            "name": "XC\\CustomProductTabs\\Product\\Tab",
+            "description": "This repo stores product-specific tabs.",
+            "x-display-name": "Product\\Tab",
+            "x-group": "XC\\CustomProductTabs"
+        },
+        {
+            "name": "XC\\MailChimp\\MailChimpGroup",
+            "description": "MailChimpGroup repo",
+            "x-display-name": "MailChimpGroup",
+            "x-group": "XC\\MailChimp"
+        },
+        {
+            "name": "XC\\MailChimp\\MailChimpGroupName",
+            "description": "MailChimpGroupName repo",
+            "x-display-name": "MailChimpGroupName",
+            "x-group": "XC\\MailChimp"
+        },
+        {
+            "name": "XC\\MailChimp\\MailChimpList",
+            "description": "MailChimpList repo",
+            "x-display-name": "MailChimpList",
+            "x-group": "XC\\MailChimp"
+        },
+        {
+            "name": "XC\\MailChimp\\MailChimpSegment",
+            "description": "MailChimpSegment repo",
+            "x-display-name": "MailChimpSegment",
+            "x-group": "XC\\MailChimp"
+        },
+        {
+            "name": "XC\\MailChimp\\Store",
+            "description": "Store repo",
+            "x-display-name": "Store",
+            "x-group": "XC\\MailChimp"
+        },
+        {
+            "name": "XC\\Mandrill\\MandrillMail",
+            "description": "MandrillMail repo keeps stats about mandrill customer data and statuses",
+            "x-display-name": "MandrillMail",
+            "x-group": "XC\\Mandrill"
+        },
+        {
+            "name": "XC\\News\\NewsMessage",
+            "description": "This repo stores all news messages with their content.",
+            "x-display-name": "NewsMessage",
+            "x-group": "XC\\News"
+        },
+        {
+            "name": "XC\\NewsletterSubscriptions\\Subscriber",
+            "description": "This repo stores all newsletter subscribers",
+            "x-display-name": "Subscriber",
+            "x-group": "XC\\NewsletterSubscriptions"
+        },
+        {
+            "name": "XC\\ProductTags\\Tag",
+            "description": "This repo stores all available product tags",
+            "x-display-name": "Tag",
+            "x-group": "XC\\ProductTags"
+        },
+        {
+            "name": "XC\\ProductVariants\\ProductVariant",
+            "description": "This repo stores created product variants defined by a certain set of attribute values.",
+            "x-display-name": "ProductVariant",
+            "x-group": "XC\\ProductVariants"
+        },
+        {
+            "name": "XC\\Reviews\\Review",
+            "description": "This repo stores customer feedback - product review records.",
+            "x-display-name": "Review",
+            "x-group": "XC\\Reviews"
+        },
+        {
+            "name": "XC\\Upselling\\UpsellingProduct",
+            "description": "UpsellingProduct repo contains the products (associated with the certain product), which are showed in the corresponding 'Related products' widget.",
+            "x-display-name": "UpsellingProduct",
+            "x-group": "XC\\Upselling"
+        },
+        {
+            "name": "XC\\Zapier\\HookSubscriber",
+            "description": "HookSubscriber contains the list of the hooks subscribers, one for each zap connection. It is updated from the Zapier side.",
+            "x-display-name": "HookSubscriber",
+            "x-group": "XC\\Zapier"
         }
     ],
     "externalDocs": {

@@ -4,7 +4,8 @@ layout: page
 title: X-Cart REST API Documentation
 identifier: ref_rest_api_doc
 redirect_from:
-    - /api/index.html
+  - /api/index.html
+published: true
 ---
 
 # X-Cart REST API Documentation
@@ -42,11 +43,11 @@ Current latest version is [{{site.swagger_pages.latest_api}}]({{ '/api/v' | appe
 
 ## Installing and configuring REST API
 
-In order to be able to access X-Cart's data externally, you have to [install](ref_Vn1mMUw9) the **REST API** module.
+In order to be able to access X-Cart's data externally, you have to [install](https://market.x-cart.com/addons/rest-api.html) the **REST API** module.
 After the module has been installed, you need to set it up.
 
 1.  Go to the **Settings** section for the REST API module: 
-    ![](http://devs.x-cart.com/attachments/3768321/8356021.png?effects=drop-shadow)
+    ![](http://devs.x-cart.com/attachments/3768321/8356021.png)
 2.  On the setting page specify one of the following:
     *   **API key (read/write)** - a key allowing an external application to have full access to X-Cart data (reading and writing);
     *   **API key (only read)** - a key allowing an external application to only read data.
@@ -486,46 +487,47 @@ In order to work with orders via REST API, you specify `_path=order`, because t
 
 The rules are as follows:
 
-1.  The **\XLite\Model\** prefix is excluded;
+1.  The `\XLite\Model\` prefix is excluded;
 2.  The rest of path is **lowercased**;
 3.  **Back-slashes** (\) become **dashes** (-).
 
-Example 1: building _path for \XLite\Model\Product model:
+Example 1: building _path for `\XLite\Model\Product` model:
 
-1.  Excluding \XLite\Model\ prefix: **\XLite\Model\Product **becomes** Product**
-2.  Lowercasing the rest: **Product** becomes **product**
-3.  Replacing back-slashes with dashes: **product** becomes **product **(no changes in fact, since there are no back-slashes)
+1.  Excluding \XLite\Model\ prefix: `\XLite\Model\Product` becomes `Product`
+2.  Lowercasing the rest: `Product` becomes `product`
+3.  Replacing back-slashes with dashes: `product` becomes `product` (no changes in fact, since there are no back-slashes)
 
-Result: **\XLite\Model\Product** is converted to **product**
+Result: `\XLite\Model\Product` is converted to `product`.
 
-Example 2: building _path for \XLite\Model\Payment\Transaction model:
+Example 2: building _path for `\XLite\Model\Payment\Transaction` model:
 
-*   Excluding \XLite\Model\ prefix: **\XLite\Model\Payment\Transaction **becomes** Payment\Transaction**
-*   Lowercasing the rest: **Payment\Transaction **becomes **payment\transaction**
-*   Replacing back-slashes with dashes: **payment\transaction **becomes** payment-transaction**
+*   Excluding `\XLite\Model\` prefix: `\XLite\Model\Payment\Transaction` becomes `Payment\Transaction`
+*   Lowercasing the rest: `Payment\Transaction` becomes `payment\transaction`
+*   Replacing back-slashes with dashes: `payment\transaction` becomes `payment-transaction`
 
-Result: **\XLite\Model\Payment\Transaction **is converted to** payment-transaction**
+Result: `\XLite\Model\Payment\Transaction` is converted to `payment-transaction`.
 
 ### Building _path for module models
 
-1.  The **\XLite\Module\** and **Model\** parts are excluded;
-2.  The rest of path is **lowercased**;
-3.  **Back-slashes** become **dashes**.
+1.  The `\XLite\Module\` and `Model\` parts are excluded;
+2.  The rest of path is `lowercased`;
+3.  `Back-slashes` become `dashes`.
 
-Example 1: building _path for \XLite\Module\CDev\SalesTax\Model\Tax model
+Example 1: building _path for `\XLite\Module\CDev\SalesTax\Model\Tax` model
 
-*   Excluding \XLite\Module\ and Model\ parts: **\XLite\Module\CDev\SalesTax\Model\Tax** becomes** CDev\SalesTax\Tax**
-*   Lowercasing the rest: **CDev\SalesTax\Tax** becomes** cd**ev\salestax\tax****
-*   Replacing back-slashes with dashes: **cd**ev\salestax\tax**** becomes** **cd**ev-salestax-tax******
+*   Excluding `\XLite\Module\` and `Model\` parts: `\XLite\Module\CDev\SalesTax\Model\Tax` becomes `CDev\SalesTax\Tax`
+*   Lowercasing the rest: `CDev\SalesTax\Tax` becomes `cdev\salestax\tax`
+*   Replacing back-slashes with dashes: `cdev\salestax\tax` becomes `cdev-salestax-tax`
 
-Result: **\XLite\Module\CDev\SalesTax\Model\Tax** is converted to** ****cd**ev-salestax-tax********
+Result: `\XLite\Module\CDev\SalesTax\Model\Tax` is converted to `cdev-salestax-tax`.
 
-Example 2: building _path for \XLite\Module\CDev\SalesTax\Model\Tax\Rate model
+Example 2: building _path for `\XLite\Module\CDev\SalesTax\Model\Tax\Rate` model
 
-*   Excluding \XLite\Module\ and Model\ parts: **\XLite\Module\CDev\SalesTax\Model\Tax\Rate** becomes** CDev\SalesTax\Tax\Rate**
-*   Lowercasing the rest:** **CDev\SalesTax\Tax\Rate**** becomes** cd**ev\salestax\tax\rate****
-*   Replacing back-slashes with dashes: **cd**ev\salestax\tax\rate**** becomes** **cd**ev-salestax-tax-rate******
-*   Result: **\XLite\Module\CDev\SalesTax\Model\Tax\Rate** is converted to** **cd**ev-salestax-tax-rate******
+*   Excluding `\XLite\Module\` and `Model\` parts: `\XLite\Module\CDev\SalesTax\Model\Tax\Rate` becomes `CDev\SalesTax\Tax\Rate`
+*   Lowercasing the rest: `CDev\SalesTax\Tax\Rate` becomes `cdev\salestax\tax\rate`
+*   Replacing back-slashes with dashes: `cdev\salestax\tax\rate` becomes `cdev-salestax-tax-rate`
+
+Result: `\XLite\Module\CDev\SalesTax\Model\Tax\Rate` is converted to `cdev-salestax-tax-rate`
 
 ## Attachments:
 

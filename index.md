@@ -20,26 +20,7 @@ Please note that X-Cart models and their API change over time, so some example r
 Current latest version is [{{site.swagger_pages.latest_api}}]({{ '/api/v' | append: site.swagger_pages.latest_api | prepend: site.baseurl }}).
 {% endnote %}
 
-## Table of Contents
-
-*   [Introduction](#introduction)
-*   [Table of Contents](#table-of-contents)
-*   [Installing and configuring REST API](#installing-and-configuring-rest-api)
-*   [How do I work with data using REST API?](#how-do-i-work-with-data-using-rest-api)
-    *   [Request parameters](#request-parameters)
-    *   [Condition (_cnd) param explained](#condition-cnd-param-explained)
-    *   [Limiting the output (Pagination)](#limiting-the-output-pagination)
-    *   [Model data and types](#model-data-and-types)
-    *   [Security protection](#security-protection)
-    *   [Output options](#output-options)
-*   [Working with REST API using a PHP client](#working-with-rest-api-using-a-php-client)
-*   [What data I can pull?](#what-data-i-can-pull)
-    *   [Custom schema examples](#custom-schema-examples)
-    *   [Default schema](#default-schema)
-    *   [Data available in the Complex schema](#data-available-in-the-complex-schema)
-*   [How to work with different entities in the Default schema?](#how-to-work-with-different-entities-in-the-default-schema)
-    *   [Building _path for core models](#building-path-for-core-models)
-    *   [Building _path for module models](#building-path-for-module-models)
+{% toc Table of Contents %}
 
 ## Installing and configuring REST API
 

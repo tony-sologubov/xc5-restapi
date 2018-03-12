@@ -12,7 +12,7 @@ published: true
 
 {% include grid_menu.html %}
 
-If you want to exchange data with X-Cart through an external script, [REST API](http://en.wikipedia.org/wiki/Representational_state_transfer) is the way to go. This article explains how you can use X-Cart's REST API.
+If you want to exchange data with X-Cart through an external script, [REST API](http://en.wikipedia.org/wiki/Representational_state_transfer) is the way to go. This article explains how you can use X-Cart's REST API. 
 
 {% note warning %}
 Please note that X-Cart models and their API change over time, so some example requests might not be compatible with your X-Cart store. 

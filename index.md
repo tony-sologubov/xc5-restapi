@@ -20,6 +20,8 @@ Please note that X-Cart models and their API change over time, so some example r
 Current latest version is [{{site.swagger_pages.latest_api}}]({{ '/api/v' | append: site.swagger_pages.latest_api | prepend: site.baseurl }}).
 {% endnote %}
 
+{% toc Table of Contents %}
+
 ## Table of Contents
 
 *   [Introduction](#introduction)
